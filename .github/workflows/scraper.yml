@@ -1,13 +1,16 @@
-name: UPSC Job Scraper
+name: UPSC Complete Scraper
 
 on:
+
   workflow_dispatch:
 
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "0 */6 * * *"
+
 
 permissions:
   contents: write
+
 
 jobs:
 
@@ -17,36 +20,80 @@ jobs:
 
     steps:
 
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
+
 
       - name: Setup Python
         uses: actions/setup-python@v5
+
         with:
           python-version: "3.12"
 
+
       - name: Install dependencies
         run: |
+
+          python -m pip install --upgrade pip
+
           pip install -r requirements.txt
 
-      - name: Run scraper
+
+      - name: Run complete UPSC crawler
         run: |
+
           python scraper.py
 
-      - name: Show result
+
+      - name: Validate output
         run: |
-          python -c "import json; d=json.load(open('data.json')); print('TOTAL JOBS:', d['total_jobs'])"
+
+          if [ ! -f data.json ]; then
+
+            echo "ERROR: data.json was not created."
+
+            exit 1
+
+          fi
+
+
+          python - <<'PY'
+
+          import json
+
+          with open("data.json", encoding="utf-8") as f:
+              data = json.load(f)
+
+          print("Pages:", data["total_pages"])
+          print("Categories:", data["total_categories"])
+
+          print("\nCategory counts:")
+
+          for name, count in sorted(
+              data["category_counts"].items()
+          ):
+              print(f"{name}: {count}")
+
+          PY
+
 
       - name: Save data
         run: |
+
           git config user.name "github-actions[bot]"
+
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add data.json
 
           if git diff --cached --quiet; then
-            echo "No changes"
+
+            echo "No changes detected."
+
           else
-            git commit -m "Update UPSC jobs"
+
+            git commit -m "Update UPSC complete data"
+
             git push
+
           fi
