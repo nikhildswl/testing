@@ -1,0 +1,31 @@
+{
+  "source": "UPSC",
+  "source_name": "Union Public Service Commission",
+  "source_url": "https://www.upsc.gov.in",
+  "scraped_at": "2026-09-25T08:40:00.681926+00:00",
+  "total_pages": 12,
+  "successful_pages": 8,
+  "failed_pages": 4,
+  "total_documents": 40,
+  "category_counts": {
+    "admit_cards": 1,
+    "answer_keys": 7,
+    "other": 4
+  },
+  "files": {
+    "jobs": "jobs.json",
+    "results": "results.json",
+    "admit_cards": "admit_cards.json",
+    "answer_keys": "answer_keys.json",
+    "question_papers": "question_papers.json",
+    "exams": "exams.json",
+    "cut_offs": "cut_offs.json",
+    "marks": "marks.json",
+    "syllabus": "syllabus.json",
+    "calendars": "calendars.json",
+    "exam_notifications": "exam_notifications.json",
+    "interviews": "interviews.json",
+    "notices": "notices.json",
+    "other": "other.json"
+  }
+}
