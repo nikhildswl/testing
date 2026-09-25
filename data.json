@@ -1,7 +1,440 @@
 {
-  "source": "https://www.upsc.gov.in",
-  "organization": "Union Public Service Commission",
-  "scraped_at": "2026-09-25T08:14:25.769875+00:00",
-  "total_jobs": 0,
-  "jobs": []
+  "source": "UPSC",
+  "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices",
+  "scraped_at": "2026-09-25T08:19:49.478238+00:00",
+  "total_jobs": 27,
+  "jobs": [
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "05 - 2026",
+      "vacancy_number": "26050514623",
+      "post_name": "09 posts of Scientist-B (Instrumentation) in Ministry of Earth Sciences",
+      "vacancy_count": 9,
+      "date_uploaded": "15/09/2026",
+      "documents": [
+        {
+          "title": "(205.46 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RT-CrgndmAddendum-12-posts-11102026-AN-Engl-270826R-15092026_10.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "05 - 2026",
+      "vacancy_number": "26050513623",
+      "post_name": "30 posts of Scientist-B (General Meteorology) in Ministry of Earth Sciences",
+      "vacancy_count": 30,
+      "date_uploaded": "15/09/2026",
+      "documents": [
+        {
+          "title": "(205.46 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RT-CrgndmAddendum-12-posts-11102026-AN-Engl-270826R-15092026_9.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "05 - 2026",
+      "vacancy_number": "26050512623",
+      "post_name": "07 posts of Scientist-B (Atmospheric Sciences) in Ministry of Earth Sciences",
+      "vacancy_count": 7,
+      "date_uploaded": "15/09/2026",
+      "documents": [
+        {
+          "title": "(205.46 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RT-CrgndmAddendum-12-posts-11102026-AN-Engl-270826R-15092026_8.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "05 - 2026",
+      "vacancy_number": "26050526623",
+      "post_name": "04 posts of Assistant Director Grade-II (IEDS) (Leather & Footwear) in Ministry of MSME",
+      "vacancy_count": 4,
+      "date_uploaded": "15/09/2026",
+      "documents": [
+        {
+          "title": "(205.46 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RT-CrgndmAddendum-12-posts-11102026-AN-Engl-270826R-15092026_7.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "05 - 2026",
+      "vacancy_number": "26050524623",
+      "post_name": "04 posts of Assistant Director Grade-II (IEDS) (Hosiery) in Ministry of MSME",
+      "vacancy_count": 4,
+      "date_uploaded": "15/09/2026",
+      "documents": [
+        {
+          "title": "(205.46 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RT-CrgndmAddendum-12-posts-11102026-AN-Engl-270826R-15092026_6.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "05 - 2026",
+      "vacancy_number": "26050522623",
+      "post_name": "04 posts of Assistant Director Grade-II (IEDS) (Food) in Ministry of MSME",
+      "vacancy_count": 4,
+      "date_uploaded": "15/09/2026",
+      "documents": [
+        {
+          "title": "(205.46 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RT-CrgndmAddendum-12-posts-11102026-AN-Engl-270826R-15092026_5.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "05 - 2026",
+      "vacancy_number": "26050520623",
+      "post_name": "03 posts of Assistant Director Grade-II (IEDS) (Chemical) in Ministry of MSME",
+      "vacancy_count": 3,
+      "date_uploaded": "15/09/2026",
+      "documents": [
+        {
+          "title": "(205.46 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RT-CrgndmAddendum-12-posts-11102026-AN-Engl-270826R-15092026_4.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "05 - 2026",
+      "vacancy_number": "26050527623",
+      "post_name": "01 post of Assistant Director Grade-I (IEDS) (Metal Finishing) in Ministry of MSME",
+      "vacancy_count": 1,
+      "date_uploaded": "15/09/2026",
+      "documents": [
+        {
+          "title": "(205.46 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RT-CrgndmAddendum-12-posts-11102026-AN-Engl-270826R-15092026_3.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "05 - 2026",
+      "vacancy_number": "26050525623",
+      "post_name": "03 posts of Assistant Director Grade-I (IEDS) (Leather & Footwear) in Ministry of MSME",
+      "vacancy_count": 3,
+      "date_uploaded": "15/09/2026",
+      "documents": [
+        {
+          "title": "(205.46 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RT-CrgndmAddendum-12-posts-11102026-AN-Engl-270826R-15092026_2.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "05 - 2026",
+      "vacancy_number": "26050523623",
+      "post_name": "02 posts of Assistant Director Grade-I (IEDS) (Hosiery) in Ministry of MSME",
+      "vacancy_count": 2,
+      "date_uploaded": "15/09/2026",
+      "documents": [
+        {
+          "title": "(205.46 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RT-CrgndmAddendum-12-posts-11102026-AN-Engl-270826R-15092026_1.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "05 - 2026",
+      "vacancy_number": "26050521623",
+      "post_name": "03 posts of Assistant Director Grade-I (IEDS) (Food) in Ministry of MSME",
+      "vacancy_count": 3,
+      "date_uploaded": "15/09/2026",
+      "documents": [
+        {
+          "title": "(205.46 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RT-CrgndmAddendum-12-posts-11102026-AN-Engl-270826R-15092026_0.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "05 - 2026",
+      "vacancy_number": "26050519623",
+      "post_name": "02 posts of Assistant Director Grade-I (IEDS) (Chemical) in Ministry of MSME",
+      "vacancy_count": 2,
+      "date_uploaded": "15/09/2026",
+      "documents": [
+        {
+          "title": "(205.46 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RT-CrgndmAddendum-12-posts-11102026-AN-Engl-270826R-15092026.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "06 - 2026",
+      "vacancy_number": "26060652613",
+      "post_name": "06 Posts Deputy Central Intelligence Officer (DCIO) (Technical), Ministry of Home Affairs",
+      "vacancy_count": 6,
+      "date_uploaded": "15/09/2026",
+      "documents": [
+        {
+          "title": "(129.7 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RT-CrgndmAdndmNotice-06-DCIO-Tech-Engl-150926.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "06 - 2025",
+      "vacancy_number": "25050609624",
+      "post_name": "01 Post of Data Processing Assistant, Ministry of Defence",
+      "vacancy_count": 1,
+      "date_uploaded": "07/08/2026",
+      "documents": [
+        {
+          "title": "(156.31 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RT-ScrtyNotice-01-DPA-MOD-Engl-070826.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "07 - 2025",
+      "vacancy_number": "25060703214",
+      "post_name": "25 Posts Company Prosecutor, Ministry of Corporate Affairs",
+      "vacancy_count": 25,
+      "date_uploaded": "16/07/2026",
+      "documents": [
+        {
+          "title": "(241.02 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RTFscrty-25-CmpnyProsctr-Engl-160726.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "12 - 2025",
+      "vacancy_number": "25081201223",
+      "post_name": "19 Posts of Assistant Public Prosecutor in CBI",
+      "vacancy_count": 19,
+      "date_uploaded": "16/07/2026",
+      "documents": [
+        {
+          "title": "(411.79 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RTFscrty-19-AstPblcPrsctrCBI-Engl-160726.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "12 - 2025",
+      "vacancy_number": "25081202223",
+      "post_name": "25 Posts of Public Prosecutor in CBI",
+      "vacancy_count": 25,
+      "date_uploaded": "06/07/2026",
+      "documents": [
+        {
+          "title": "(245.21 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RT-FScrty-25-PublProseCBI-Engl-060726.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "52 - 2025 (Special)",
+      "vacancy_number": "25075201726",
+      "post_name": "156 Posts of Enforcement Officer - Accounts Officer in EPFO",
+      "vacancy_count": 156,
+      "date_uploaded": "22/07/2026",
+      "documents": [
+        {
+          "title": "(415.29 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RTScrtyNotice-156-EO-AO-EPFO-Engl-220726.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "13 - 2025",
+      "vacancy_number": "25091309413",
+      "post_name": "32 Posts of Accounts Officer, Administration of Union Territory of Ladakh",
+      "vacancy_count": 32,
+      "date_uploaded": "30/07/2026",
+      "documents": [
+        {
+          "title": "(178.37 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/CorrigendumRevAndmNotice08-19-32-Posts-Engl-300726_1.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "08 - 2025",
+      "vacancy_number": "25060805428",
+      "post_name": "19 Posts of Manager Grade - I - Section Officer, Ministry of Defence",
+      "vacancy_count": 19,
+      "date_uploaded": "30/07/2026",
+      "documents": [
+        {
+          "title": "(178.37 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/CorrigendumRevAndmNotice08-19-32-Posts-Engl-300726_0.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "08 - 2025",
+      "vacancy_number": "25060803428",
+      "post_name": "08 Posts of Administrative Officer Grade - I, Ministry of Defence",
+      "vacancy_count": 8,
+      "date_uploaded": "30/07/2026",
+      "documents": [
+        {
+          "title": "(178.37 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/CorrigendumRevAndmNotice08-19-32-Posts-Engl-300726.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "06 - 2025",
+      "vacancy_number": "25050624624",
+      "post_name": "20 Posts of Drugs Inspector (Medical Devices), Ministry of Health and Family Welfare",
+      "vacancy_count": 20,
+      "date_uploaded": "02/06/2026",
+      "documents": [
+        {
+          "title": "(435.93 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RT-FscrtyNotice-20-DrginspctrmdclDvce-Engl-020626.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "07 - 2025",
+      "vacancy_number": "25060754114",
+      "post_name": "18 Posts of Veterinary Assistant Surgeon, Government of Puducherry",
+      "vacancy_count": 18,
+      "date_uploaded": "20/05/2026",
+      "documents": [
+        {
+          "title": "(614.84 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RTNotice-18-VEtrnyAssttSrgnPuduchry-Engl-200526.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "04 - 2025",
+      "vacancy_number": "25040412126",
+      "post_name": "16 Posts of Senior Veterinary Officer, Andaman and Nicobar Administration",
+      "vacancy_count": 16,
+      "date_uploaded": "23/04/2026",
+      "documents": [
+        {
+          "title": "(369.93 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RTScrtyNotice-16-SrVetrnyOfcr-Engl-230426.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "52 - 2025 (Special)",
+      "vacancy_number": "25075202726",
+      "post_name": "74 Posts of Assistant Provident Fund Commissioner, EPFO",
+      "vacancy_count": 74,
+      "date_uploaded": "21/04/2026",
+      "documents": [
+        {
+          "title": "(275.25 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/RTScrtyNotice-74-APFC-EPFO-Engl-210426.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "07 - 2025",
+      "vacancy_number": "25060734614",
+      "post_name": "03 Posts of Assistant Director Grade-II (IEDS) (Chemical), Ministry of MSME",
+      "vacancy_count": 3,
+      "date_uploaded": "06/02/2026",
+      "documents": [
+        {
+          "title": "(308.08 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/FScrty-03-AstDirGr-II-IEDS-Chemical-Engl-060225.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    },
+    {
+      "organization": "Union Public Service Commission",
+      "category": "UPSC",
+      "advertisement_number": "07 - 2025",
+      "vacancy_number": "25060737614",
+      "post_name": "02 Posts of Assistant Director Grade-II (IEDS) (Leather & Footwear), Ministry of MSME",
+      "vacancy_count": 2,
+      "date_uploaded": "06/02/2026",
+      "documents": [
+        {
+          "title": "(291.84 KB)",
+          "url": "https://www.upsc.gov.in/sites/default/files/FScrty-02-AstDirGr-II-IEDS-LthrFtwr-Engl-060225.pdf"
+        }
+      ],
+      "source_url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices"
+    }
+  ]
 }
