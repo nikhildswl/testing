@@ -19,58 +19,82 @@ jobs:
 
     steps:
 
-      # ------------------------------------------------------
-      # Checkout repository
-      # ------------------------------------------------------
-
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      # ------------------------------------------------------
-      # Setup Python
-      # ------------------------------------------------------
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      # ------------------------------------------------------
-      # Install dependencies
-      # ------------------------------------------------------
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # ------------------------------------------------------
-      # Run scraper
-      # ------------------------------------------------------
-
-      - name: Run complete UPSC crawler
+      - name: Run UPSC scraper
         run: |
           python scraper.py
 
-      # ------------------------------------------------------
-      # Validate JSON
-      # ------------------------------------------------------
-
-      - name: Validate output
+      - name: Validate generated files
         run: |
-          python -c "import json; d=json.load(open('data.json', encoding='utf-8')); print('JSON OK'); print('Pages:', d.get('total_pages')); print('Successful:', d.get('successful_pages')); print('Failed:', d.get('failed_pages')); print('Documents:', d.get('total_documents'))"
+          python - <<'PY'
+          import json
+          import os
 
-      # ------------------------------------------------------
-      # Save data to repository
-      # ------------------------------------------------------
+          required = [
+              "data/index.json",
+              "data/jobs.json",
+              "data/results.json",
+              "data/admit_cards.json",
+              "data/answer_keys.json",
+              "data/question_papers.json",
+              "data/exams.json",
+              "data/cut_offs.json",
+              "data/marks.json",
+              "data/syllabus.json",
+              "data/calendars.json",
+              "data/exam_notifications.json",
+              "data/interviews.json",
+              "data/notices.json",
+              "data/documents.json",
+              "data/other.json",
+          ]
 
-      - name: Save data
+          for file in required:
+
+              if not os.path.exists(file):
+                  raise SystemExit(
+                      f"Missing file: {file}"
+                  )
+
+              with open(
+                  file,
+                  encoding="utf-8"
+              ) as f:
+                  json.load(f)
+
+              print(
+                  f"OK: {file}"
+              )
+
+          print("ALL JSON FILES VALID")
+          PY
+
+      - name: Remove old huge data.json
+        run: |
+          rm -f data.json
+
+      - name: Save scraper data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add data.json
+          git add -A
 
-          git diff --cached --quiet || git commit -m "Update UPSC data"
-
-          git push
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update UPSC data"
+            git push
+          fi
