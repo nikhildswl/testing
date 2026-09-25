@@ -1,4 +1,5 @@
 import json
+import os
 import re
 import time
 from datetime import datetime, timezone
@@ -17,6 +18,8 @@ SITEMAP_URL = "https://www.upsc.gov.in/site-map"
 
 REQUEST_DELAY = 0.5
 MAX_RETRIES = 3
+
+OUTPUT_DIR = "data"
 
 HEADERS = {
     "User-Agent": (
@@ -37,7 +40,7 @@ SESSION.headers.update(HEADERS)
 
 
 # ============================================================
-# BASIC HELPERS
+# HELPERS
 # ============================================================
 
 def clean(value):
@@ -56,18 +59,6 @@ def absolute_url(url, base=BASE_URL):
     return urljoin(base, url)
 
 
-def is_internal(url):
-    try:
-        parsed = urlparse(url)
-        return parsed.netloc in {
-            "",
-            "upsc.gov.in",
-            "www.upsc.gov.in",
-        }
-    except Exception:
-        return False
-
-
 def normalize_url(url):
     if not url:
         return ""
@@ -76,16 +67,32 @@ def normalize_url(url):
 
     parsed = urlparse(url)
 
-    clean_url = parsed._replace(
-        fragment="",
-        query=parsed.query
+    result = parsed._replace(
+        fragment=""
     ).geturl()
 
-    return clean_url.rstrip("/")
+    return result.rstrip("/")
+
+
+def is_internal(url):
+    try:
+        host = urlparse(url).netloc.lower()
+
+        return host in {
+            "",
+            "upsc.gov.in",
+            "www.upsc.gov.in",
+        }
+
+    except Exception:
+        return False
 
 
 def is_document(url):
-    lower = url.lower()
+    if not url:
+        return False
+
+    path = urlparse(url).path.lower()
 
     extensions = (
         ".pdf",
@@ -97,35 +104,27 @@ def is_document(url):
         ".rar",
     )
 
-    return lower.split("?")[0].endswith(extensions)
+    return path.endswith(extensions)
 
 
 # ============================================================
-# REQUEST FUNCTION
+# SAFE REQUEST
 # ============================================================
 
 def get(url):
-    """
-    Downloads a page safely.
-
-    Important:
-    - Timeout will NOT crash the complete scraper.
-    - Retries 3 times.
-    - Failed pages are skipped.
-    """
 
     for attempt in range(1, MAX_RETRIES + 1):
 
         try:
+
             print(
-                f"GET {url} "
-                f"(attempt {attempt}/{MAX_RETRIES})"
+                f"GET [{attempt}/{MAX_RETRIES}] {url}"
             )
 
             response = SESSION.get(
                 url,
-                timeout=(15, 45),
-                allow_redirects=True,
+                timeout=(15, 40),
+                allow_redirects=True
             )
 
             response.raise_for_status()
@@ -137,8 +136,7 @@ def get(url):
         except requests.exceptions.Timeout:
 
             print(
-                f"TIMEOUT: {url} "
-                f"(attempt {attempt}/{MAX_RETRIES})"
+                f"TIMEOUT: {url}"
             )
 
             if attempt < MAX_RETRIES:
@@ -147,8 +145,7 @@ def get(url):
         except requests.exceptions.RequestException as error:
 
             print(
-                f"REQUEST ERROR: {url} | {error} "
-                f"(attempt {attempt}/{MAX_RETRIES})"
+                f"REQUEST ERROR: {url} | {error}"
             )
 
             if attempt < MAX_RETRIES:
@@ -163,220 +160,204 @@ def get(url):
             if attempt < MAX_RETRIES:
                 time.sleep(3)
 
-    print(f"SKIPPED AFTER RETRIES: {url}")
+    print(
+        f"SKIPPED: {url}"
+    )
 
     return None
 
 
 # ============================================================
-# CATEGORY DETECTION
+# CATEGORY
 # ============================================================
 
-def classify(url, title="", text=""):
+def classify(url, title, text):
+
     source = (
         f"{url} "
         f"{title} "
-        f"{text[:3000]}"
+        f"{text[:2500]}"
     ).lower()
 
-    # Admit Card
-    if (
-        "admit-card" in source
-        or "admit card" in source
-        or "e-admit" in source
-    ):
-        return "admit_card"
+    # Admit Cards
+    if any(x in source for x in [
+        "e-admit-card",
+        "e-admit card",
+        "admit-card",
+        "admit card",
+    ]):
+        return "admit_cards"
 
-    # Answer Key
-    if (
-        "answer-key" in source
-        or "answer key" in source
-    ):
-        return "answer_key"
+    # Answer Keys
+    if any(x in source for x in [
+        "answer-key",
+        "answer key",
+    ]):
+        return "answer_keys"
 
-    # Written Result
-    if (
-        "written-result" in source
-        or "written result" in source
-    ):
-        return "written_result"
+    # Final Results
+    if any(x in source for x in [
+        "final-result",
+        "final result",
+    ]):
+        return "results"
 
-    # Final Result
-    if (
-        "final-result" in source
-        or "final result" in source
-    ):
-        return "final_result"
+    # Written Results
+    if any(x in source for x in [
+        "written-result",
+        "written result",
+    ]):
+        return "results"
+
+    # Results
+    if "result" in source:
+        return "results"
 
     # Question Papers
-    if (
-        "question-paper" in source
-        or "question paper" in source
-        or "previous-question" in source
-    ):
-        return "question_paper"
+    if any(x in source for x in [
+        "question-paper",
+        "question paper",
+        "previous-question",
+        "previous question",
+    ]):
+        return "question_papers"
 
-    # Cutoff
-    if (
-        "cut-off" in source
-        or "cutoff" in source
-        or "cut off" in source
-    ):
-        return "cut_off"
+    # Cut Off
+    if any(x in source for x in [
+        "cut-off",
+        "cutoff",
+        "cut off",
+    ]):
+        return "cut_offs"
 
     # Marks
-    if (
-        "marks-info" in source
-        or "marks information" in source
-        or "marks of recommended" in source
-    ):
+    if any(x in source for x in [
+        "marks-info",
+        "marks information",
+        "marks of recommended",
+    ]):
         return "marks"
 
     # Calendar
-    if (
-        "calendar" in source
-        or "exam-calendar" in source
-    ):
-        return "calendar"
+    if "calendar" in source:
+        return "calendars"
 
-    # Examination Notification
-    if (
-        "examination-notification" in source
-        or "examination notification" in source
-    ):
-        return "exam_notification"
+    # Examination Notifications
+    if any(x in source for x in [
+        "examination notification",
+        "examination-notification",
+    ]):
+        return "exam_notifications"
 
-    # Active Examination
-    if (
-        "active-exams" in source
-        or "active examination" in source
-    ):
-        return "active_examination"
+    # Active Exams
+    if any(x in source for x in [
+        "active-exams",
+        "active examination",
+    ]):
+        return "exams"
 
-    # Forthcoming Examination
-    if (
-        "forthcoming-exams" in source
-        or "forthcoming examination" in source
-    ):
-        return "forthcoming_examination"
+    # Forthcoming Exams
+    if any(x in source for x in [
+        "forthcoming-exams",
+        "forthcoming examination",
+    ]):
+        return "exams"
 
     # Syllabus
-    if (
-        "syllabus" in source
-        or "scheme" in source
-    ):
+    if "syllabus" in source or "scheme" in source:
         return "syllabus"
 
-    # Recruitment Advertisement
-    if (
-        "recruitment-advertisement" in source
-        or "recruitment advertisement" in source
-    ):
-        return "recruitment_advertisement"
+    # Recruitment Advertisements = JOBS
+    if any(x in source for x in [
+        "recruitment-advertisement",
+        "recruitment advertisement",
+        "recruitment advertisement no",
+    ]):
+        return "jobs"
 
     # Recruitment Test
-    if (
-        "recruitment-test" in source
-        or "recruitment test" in source
-    ):
-        return "recruitment_test"
+    if any(x in source for x in [
+        "recruitment-test",
+        "recruitment test",
+    ]):
+        return "jobs"
 
     # Recruitment
     if "recruitment" in source:
-        return "recruitment"
-
-    # Applicants
-    if (
-        "applicant" in source
-        or "applicants" in source
-    ):
-        return "applicants"
+        return "jobs"
 
     # Interview
-    if (
-        "interview" in source
-        or "interview schedule" in source
-    ):
-        return "interview_schedule"
+    if "interview" in source:
+        return "interviews"
 
     # Corrigendum
     if "corrigendum" in source:
-        return "corrigendum"
+        return "notices"
 
     # Scrutiny
     if "scrutiny" in source:
-        return "scrutiny"
+        return "notices"
 
     # Time Table
-    if (
-        "time-table" in source
-        or "time table" in source
-        or "timetable" in source
-    ):
-        return "time_table"
+    if any(x in source for x in [
+        "time-table",
+        "time table",
+        "timetable",
+    ]):
+        return "exams"
 
-    # Press Release
-    if (
-        "press-note" in source
-        or "press note" in source
-        or "press release" in source
-    ):
-        return "press_release"
+    # Press Note
+    if any(x in source for x in [
+        "press-note",
+        "press note",
+        "press release",
+    ]):
+        return "notices"
 
     # Tenders
     if "tender" in source:
-        return "tender"
+        return "other"
 
     # Annual Reports
-    if (
-        "annual-report" in source
-        or "annual report" in source
-    ):
-        return "annual_report"
+    if "annual report" in source:
+        return "other"
 
     # Court Judgments
-    if (
-        "court-judgment" in source
-        or "court judgment" in source
-        or "judgment" in source
-    ):
-        return "court_judgment"
-
-    # RTI
-    if "rti" in source:
-        return "rti"
+    if "court judgment" in source:
+        return "other"
 
     # Forms
-    if (
-        "form" in source
-        or "forms" in source
-    ):
-        return "forms"
-
-    # Notices
-    if "notice" in source:
-        return "notice"
+    if "form" in source:
+        return "other"
 
     # Examination
-    if (
-        "/examinations/" in source
-        or "examination" in source
-    ):
-        return "examination"
+    if "examination" in source:
+        return "exams"
+
+    # Notice
+    if "notice" in source:
+        return "notices"
 
     return "other"
 
 
 # ============================================================
-# LINK EXTRACTION
+# LINKS
 # ============================================================
 
 def extract_links(soup, page_url):
-    links = []
 
-    for tag in soup.find_all("a", href=True):
+    links = {}
 
-        href = tag.get("href", "").strip()
+    for tag in soup.find_all(
+        "a",
+        href=True
+    ):
+
+        href = tag.get(
+            "href",
+            ""
+        ).strip()
 
         if not href:
             continue
@@ -384,62 +365,74 @@ def extract_links(soup, page_url):
         if href.startswith("#"):
             continue
 
-        if href.lower().startswith("javascript:"):
+        if href.lower().startswith(
+            "javascript:"
+        ):
             continue
 
-        if href.lower().startswith("mailto:"):
+        if href.lower().startswith(
+            "mailto:"
+        ):
             continue
 
         full_url = normalize_url(
-            absolute_url(href, page_url)
+            absolute_url(
+                href,
+                page_url
+            )
         )
 
         if not full_url:
             continue
 
-        text = clean(
-            tag.get_text(" ", strip=True)
+        title = clean(
+            tag.get_text(
+                " ",
+                strip=True
+            )
         )
 
-        links.append({
-            "title": text,
+        links[full_url] = {
+            "title": title,
             "url": full_url,
-            "internal": is_internal(full_url),
             "document": is_document(full_url),
-        })
+        }
 
-    # Remove duplicates
-    unique = {}
-    for item in links:
-        unique[item["url"]] = item
-
-    return list(unique.values())
+    return list(links.values())
 
 
 # ============================================================
-# DOCUMENT EXTRACTION
+# DOCUMENTS
 # ============================================================
 
 def extract_documents(links):
+
     documents = []
 
     for link in links:
 
-        if link["document"]:
+        if link.get("document"):
 
             documents.append({
-                "title": link["title"],
-                "url": link["url"],
+                "title": link.get(
+                    "title",
+                    ""
+                ),
+                "url": link.get(
+                    "url",
+                    ""
+                ),
             })
 
     return documents
 
 
 # ============================================================
-# TABLE EXTRACTION
+# TABLES
 # ============================================================
 
 def extract_tables(soup):
+
     tables = []
 
     for table in soup.find_all("table"):
@@ -453,14 +446,15 @@ def extract_tables(soup):
             for cell in tr.find_all(
                 ["th", "td"]
             ):
-                cells.append(
-                    clean(
-                        cell.get_text(
-                            " ",
-                            strip=True
-                        )
+
+                value = clean(
+                    cell.get_text(
+                        " ",
+                        strip=True
                     )
                 )
+
+                cells.append(value)
 
             if cells:
                 rows.append(cells)
@@ -472,13 +466,14 @@ def extract_tables(soup):
 
 
 # ============================================================
-# KEY VALUE EXTRACTION
+# KEY / VALUE DATA
 # ============================================================
 
 def extract_key_values(soup):
+
     data = {}
 
-    # Definition lists
+    # DL format
     for dl in soup.find_all("dl"):
 
         terms = dl.find_all("dt")
@@ -506,9 +501,7 @@ def extract_key_values(soup):
             if key and value:
                 data[key] = value
 
-    # Paragraphs that look like:
-    # Date: something
-    # Last Date - something
+    # Label: Value format
     for element in soup.find_all(
         ["p", "li"]
     ):
@@ -527,8 +520,13 @@ def extract_key_values(soup):
 
         if match:
 
-            key = clean(match.group(1))
-            value = clean(match.group(2))
+            key = clean(
+                match.group(1)
+            )
+
+            value = clean(
+                match.group(2)
+            )
 
             if (
                 key
@@ -544,15 +542,17 @@ def extract_key_values(soup):
 
 
 # ============================================================
-# JOB FIELD EXTRACTION
+# JOB FIELDS
 # ============================================================
 
 def extract_job_fields(text):
+
     text = clean(text)
 
     fields = {}
 
     patterns = {
+
         "vacancy": [
             r"vacancies?\s*[:\-]?\s*(\d+)",
             r"no\.?\s*of\s*vacancies?\s*[:\-]?\s*(\d+)",
@@ -561,33 +561,33 @@ def extract_job_fields(text):
         ],
 
         "last_date": [
-            r"last\s+date(?:\s+for\s+application)?\s*[:\-]?\s*([0-9]{1,2}[\/\-][0-9]{1,2}[\/\-][0-9]{2,4})",
-            r"last\s+date(?:\s+for\s+application)?\s*[:\-]?\s*([0-9]{1,2}\s+[A-Za-z]+\s+[0-9]{4})",
+            r"last\s+date.*?([0-9]{1,2}[\/\-][0-9]{1,2}[\/\-][0-9]{2,4})",
+            r"last\s+date.*?([0-9]{1,2}\s+[A-Za-z]+\s+[0-9]{4})",
         ],
 
         "notification_date": [
-            r"date\s+of\s+notification\s*[:\-]?\s*([0-9]{1,2}[\/\-][0-9]{1,2}[\/\-][0-9]{2,4})",
-            r"date\s+of\s+notification\s*[:\-]?\s*([0-9]{1,2}\s+[A-Za-z]+\s+[0-9]{4})",
+            r"date\s+of\s+notification.*?([0-9]{1,2}[\/\-][0-9]{1,2}[\/\-][0-9]{2,4})",
+            r"date\s+of\s+notification.*?([0-9]{1,2}\s+[A-Za-z]+\s+[0-9]{4})",
         ],
 
         "exam_date": [
-            r"date\s+of\s+commencement\s+of\s+examination\s*[:\-]?\s*([^\n,;]{3,60})",
-            r"exam(?:ination)?\s+date\s*[:\-]?\s*([0-9]{1,2}[\/\-][0-9]{1,2}[\/\-][0-9]{2,4})",
+            r"date\s+of\s+commencement.*?([^\n]{3,80})",
+            r"exam(?:ination)?\s+date.*?([0-9]{1,2}[\/\-][0-9]{1,2}[\/\-][0-9]{2,4})",
         ],
 
         "age_limit": [
-            r"age\s+limit\s*[:\-]?\s*([^\n;]{3,100})",
-            r"maximum\s+age\s*[:\-]?\s*([^\n;]{3,100})",
+            r"age\s+limit\s*[:\-]?\s*([^\n;]{3,120})",
+            r"maximum\s+age\s*[:\-]?\s*([^\n;]{3,120})",
         ],
 
         "salary": [
-            r"salary\s*[:\-]?\s*([^\n;]{3,120})",
-            r"pay\s+scale\s*[:\-]?\s*([^\n;]{3,120})",
-            r"pay\s+level\s*[:\-]?\s*([^\n;]{3,120})",
+            r"salary\s*[:\-]?\s*([^\n;]{3,150})",
+            r"pay\s+scale\s*[:\-]?\s*([^\n;]{3,150})",
+            r"pay\s+level\s*[:\-]?\s*([^\n;]{3,150})",
         ],
 
         "application_fee": [
-            r"application\s+fee\s*[:\-]?\s*([^\n;]{2,100})",
+            r"application\s+fee\s*[:\-]?\s*([^\n;]{2,120})",
             r"fee\s*[:\-]?\s*(?:rs\.?|₹)?\s*([0-9,]+)",
         ],
     }
@@ -630,12 +630,11 @@ def scrape_page(url):
             "status": "failed",
             "title": "",
             "category": "other",
-            "links": [],
             "documents": [],
+            "links": [],
             "tables": [],
             "key_values": {},
             "job_fields": {},
-            "text": "",
         }
 
     try:
@@ -648,6 +647,7 @@ def scrape_page(url):
         title = ""
 
         if soup.title:
+
             title = clean(
                 soup.title.get_text(
                     " ",
@@ -655,7 +655,9 @@ def scrape_page(url):
                 )
             )
 
-        # Main visible text
+        # Only keep useful page text.
+        # Do NOT save the entire HTML/text,
+        # otherwise files become enormous.
         text = clean(
             soup.get_text(
                 " ",
@@ -690,17 +692,39 @@ def scrape_page(url):
             text
         )
 
+        # Keep records reasonably small
+        useful_links = links[:250]
+
+        useful_tables = tables[:50]
+
+        # Limit very large tables
+        limited_tables = []
+
+        for table in useful_tables:
+
+            limited_tables.append(
+                table[:200]
+            )
+
         return {
+
             "url": url,
+
             "status": "success",
+
             "title": title,
+
             "category": category,
-            "links": links,
+
             "documents": documents,
-            "tables": tables,
+
+            "links": useful_links,
+
+            "tables": limited_tables,
+
             "key_values": key_values,
+
             "job_fields": job_fields,
-            "text": text,
         }
 
     except Exception as error:
@@ -710,16 +734,25 @@ def scrape_page(url):
         )
 
         return {
+
             "url": url,
+
             "status": "parse_error",
+
             "title": "",
+
             "category": "other",
-            "links": [],
+
             "documents": [],
+
+            "links": [],
+
             "tables": [],
+
             "key_values": {},
+
             "job_fields": {},
-            "text": "",
+
             "error": str(error),
         }
 
@@ -730,17 +763,15 @@ def scrape_page(url):
 
 def get_sitemap_urls():
 
-    print("=" * 60)
-    print("LOADING UPSC SITE MAP")
-    print("=" * 60)
+    print("=" * 70)
+    print("LOADING UPSC SITEMAP")
+    print("=" * 70)
 
-    response = get(SITEMAP_URL)
+    response = get(
+        SITEMAP_URL
+    )
 
     if response is None:
-
-        print(
-            "ERROR: Could not load UPSC sitemap."
-        )
 
         return []
 
@@ -776,16 +807,22 @@ def get_sitemap_urls():
             if not full_url:
                 continue
 
-            if not is_internal(full_url):
+            if not is_internal(
+                full_url
+            ):
                 continue
 
-            if is_document(full_url):
+            if is_document(
+                full_url
+            ):
                 continue
 
-            urls.add(full_url)
+            urls.add(
+                full_url
+            )
 
         print(
-            f"SITEMAP URLS FOUND: {len(urls)}"
+            f"SITEMAP URLS: {len(urls)}"
         )
 
         return sorted(urls)
@@ -793,7 +830,7 @@ def get_sitemap_urls():
     except Exception as error:
 
         print(
-            f"SITEMAP PARSE ERROR: {error}"
+            f"SITEMAP ERROR: {error}"
         )
 
         return []
@@ -803,7 +840,7 @@ def get_sitemap_urls():
 # IMPORTANT UPSC PAGES
 # ============================================================
 
-def get_seed_urls():
+def seed_urls():
 
     return [
 
@@ -835,65 +872,111 @@ def get_seed_urls():
 
 
 # ============================================================
+# SAVE JSON
+# ============================================================
+
+def save_json(filename, data):
+
+    os.makedirs(
+        OUTPUT_DIR,
+        exist_ok=True
+    )
+
+    path = os.path.join(
+        OUTPUT_DIR,
+        filename
+    )
+
+    with open(
+        path,
+        "w",
+        encoding="utf-8"
+    ) as file:
+
+        json.dump(
+            data,
+            file,
+            ensure_ascii=False,
+            indent=2
+        )
+
+    print(
+        f"CREATED: {path}"
+    )
+
+
+# ============================================================
 # MAIN
 # ============================================================
 
 def main():
 
-    print("=" * 70)
-    print("UPSC COMPLETE PUBLIC DATA SCRAPER")
-    print("=" * 70)
-
-    started_at = datetime.now(
+    started = datetime.now(
         timezone.utc
     ).isoformat()
 
-    sitemap_urls = get_sitemap_urls()
+    print("=" * 70)
+    print("UPSC DATA SCRAPER")
+    print("=" * 70)
 
-    seed_urls = get_seed_urls()
+    # --------------------------------------------------------
+    # Get URLs
+    # --------------------------------------------------------
 
-    all_urls = set()
+    sitemap = get_sitemap_urls()
 
-    for url in sitemap_urls:
-        all_urls.add(
+    urls = set()
+
+    for url in sitemap:
+        urls.add(
             normalize_url(url)
         )
 
-    for url in seed_urls:
-        all_urls.add(
+    for url in seed_urls():
+        urls.add(
             normalize_url(url)
         )
 
-    all_urls = sorted(
+    urls = sorted(
         url
-        for url in all_urls
-        if url and is_internal(url)
+        for url in urls
+        if url
+        and is_internal(url)
+        and not is_document(url)
     )
 
     print("=" * 70)
     print(
-        f"TOTAL UNIQUE PAGES TO SCRAPE: {len(all_urls)}"
+        f"TOTAL PAGES: {len(urls)}"
     )
     print("=" * 70)
 
+    # --------------------------------------------------------
+    # Scrape
+    # --------------------------------------------------------
+
     records = []
 
-    for index, url in enumerate(
-        all_urls,
+    for number, url in enumerate(
+        urls,
         start=1
     ):
 
         print(
-            f"[{index}/{len(all_urls)}] {url}"
+            f"[{number}/{len(urls)}]"
         )
 
-        record = scrape_page(url)
+        record = scrape_page(
+            url
+        )
 
-        records.append(record)
+        records.append(
+            record
+        )
 
-    # ========================================================
-    # CATEGORY ORGANIZATION
-    # ========================================================
+    # --------------------------------------------------------
+    # Categories
+    # --------------------------------------------------------
 
     categories = {}
 
@@ -904,35 +987,18 @@ def main():
             "other"
         )
 
-        if category not in categories:
-            categories[category] = []
-
-        categories[category].append(
-            record
+        categories.setdefault(
+            category,
+            []
         )
 
-    # ========================================================
-    # CATEGORY COUNTS
-    # ========================================================
+        categories[
+            category
+        ].append(record)
 
-    category_counts = {}
-
-    for category, items in categories.items():
-
-        category_counts[category] = len(
-            items
-        )
-
-    category_counts = dict(
-        sorted(
-            category_counts.items(),
-            key=lambda x: x[0]
-        )
-    )
-
-    # ========================================================
-    # DOCUMENT INDEX
-    # ========================================================
+    # --------------------------------------------------------
+    # Documents
+    # --------------------------------------------------------
 
     documents = []
 
@@ -944,106 +1010,178 @@ def main():
         ):
 
             documents.append({
+
                 "page_url": record.get(
                     "url",
                     ""
                 ),
+
                 "page_title": record.get(
                     "title",
                     ""
                 ),
+
                 "category": record.get(
                     "category",
                     "other"
                 ),
+
                 "title": document.get(
                     "title",
                     ""
                 ),
+
                 "url": document.get(
                     "url",
                     ""
                 ),
             })
 
-    # Remove duplicate documents
-
-    unique_documents = {}
+    # Deduplicate documents
+    document_map = {}
 
     for document in documents:
 
-        unique_documents[
+        document_map[
             document["url"]
         ] = document
 
     documents = list(
-        unique_documents.values()
+        document_map.values()
     )
 
-    # ========================================================
-    # FINAL OUTPUT
-    # ========================================================
+    # --------------------------------------------------------
+    # Counts
+    # --------------------------------------------------------
 
-    output = {
+    category_counts = {}
+
+    for category, items in categories.items():
+
+        category_counts[
+            category
+        ] = len(items)
+
+    category_counts = dict(
+        sorted(
+            category_counts.items()
+        )
+    )
+
+    # --------------------------------------------------------
+    # Save individual categories
+    # --------------------------------------------------------
+
+    file_names = {
+
+        "jobs": "jobs.json",
+
+        "results": "results.json",
+
+        "admit_cards": "admit_cards.json",
+
+        "answer_keys": "answer_keys.json",
+
+        "question_papers": "question_papers.json",
+
+        "exams": "exams.json",
+
+        "cut_offs": "cut_offs.json",
+
+        "marks": "marks.json",
+
+        "syllabus": "syllabus.json",
+
+        "calendars": "calendars.json",
+
+        "exam_notifications":
+            "exam_notifications.json",
+
+        "interviews":
+            "interviews.json",
+
+        "notices":
+            "notices.json",
+
+        "other":
+            "other.json",
+    }
+
+    for category, filename in file_names.items():
+
+        save_json(
+            filename,
+            categories.get(
+                category,
+                []
+            )
+        )
+
+    # --------------------------------------------------------
+    # Documents
+    # --------------------------------------------------------
+
+    save_json(
+        "documents.json",
+        documents
+    )
+
+    # --------------------------------------------------------
+    # Index
+    # --------------------------------------------------------
+
+    index = {
 
         "source": "UPSC",
 
-        "source_name": (
-            "Union Public Service Commission"
-        ),
+        "source_name":
+            "Union Public Service Commission",
 
-        "source_url": BASE_URL,
+        "source_url":
+            BASE_URL,
 
-        "scraped_at": started_at,
+        "scraped_at":
+            started,
 
-        "total_pages": len(records),
+        "total_pages":
+            len(records),
 
-        "successful_pages": sum(
-            1
-            for r in records
-            if r.get("status") == "success"
-        ),
+        "successful_pages":
+            sum(
+                1
+                for r in records
+                if r.get("status")
+                == "success"
+            ),
 
-        "failed_pages": sum(
-            1
-            for r in records
-            if r.get("status") != "success"
-        ),
+        "failed_pages":
+            sum(
+                1
+                for r in records
+                if r.get("status")
+                != "success"
+            ),
 
-        "total_documents": len(
-            documents
-        ),
+        "total_documents":
+            len(documents),
 
-        "total_categories": len(
-            categories
-        ),
+        "category_counts":
+            category_counts,
 
-        "category_counts": (
-            category_counts
-        ),
-
-        "categories": categories,
-
-        "documents": documents,
-
-        "all_records": records,
+        "files": file_names,
     }
 
-    with open(
-        "data.json",
-        "w",
-        encoding="utf-8"
-    ) as file:
+    save_json(
+        "index.json",
+        index
+    )
 
-        json.dump(
-            output,
-            file,
-            ensure_ascii=False,
-            indent=2
-        )
+    # --------------------------------------------------------
+    # Summary
+    # --------------------------------------------------------
 
     print("=" * 70)
-    print("SCRAPING COMPLETED")
+    print("SCRAPER FINISHED")
     print("=" * 70)
 
     print(
@@ -1051,36 +1189,26 @@ def main():
     )
 
     print(
-        f"Successful: {output['successful_pages']}"
+        f"Documents: {len(documents)}"
     )
 
     print(
-        f"Failed: {output['failed_pages']}"
+        f"Successful: {index['successful_pages']}"
     )
 
     print(
-        f"Documents: {output['total_documents']}"
-    )
-
-    print(
-        f"Categories: {output['total_categories']}"
+        f"Failed: {index['failed_pages']}"
     )
 
     print("=" * 70)
-
-    print("CATEGORY COUNTS:")
 
     for category, count in category_counts.items():
 
         print(
-            f"  {category}: {count}"
+            f"{category}: {count}"
         )
 
     print("=" * 70)
-
-    print(
-        "data.json CREATED SUCCESSFULLY"
-    )
 
 
 if __name__ == "__main__":
