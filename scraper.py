@@ -9,82 +9,102 @@ from bs4 import BeautifulSoup
 
 
 BASE_URL = "https://www.upsc.gov.in"
-RECRUITMENT_URL = "https://www.upsc.gov.in/recruitment/recruitment-advertisement"
+
+RECRUITMENT_URL = (
+    "https://www.upsc.gov.in/recruitment/recruitment-advertisement"
+)
 
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
         "Chrome/140.0.0.0 Safari/537.36"
-    )
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
 }
 
 
 def clean(text):
-    if not text:
-        return ""
-    return re.sub(r"\s+", " ", text).strip()
+    return re.sub(r"\s+", " ", text or "").strip()
 
 
-def download_page(url):
+def get_page(url):
     response = requests.get(
         url,
         headers=HEADERS,
-        timeout=40
+        timeout=60
     )
+
+    print("URL:", url)
+    print("STATUS:", response.status_code)
+
     response.raise_for_status()
+
     return response.text
 
 
-def get_latest_advertisements():
-    print("Opening UPSC recruitment page...")
+def get_advertisement_pdfs():
+    html = get_page(RECRUITMENT_URL)
 
-    html = download_page(RECRUITMENT_URL)
     soup = BeautifulSoup(html, "lxml")
 
     advertisements = []
 
     for link in soup.find_all("a", href=True):
 
-        title = clean(link.get_text(" ", strip=True))
+        title = clean(
+            link.get_text(" ", strip=True)
+        )
+
         href = link.get("href", "").strip()
 
-        if not title or not href:
+        if not href:
             continue
 
-        full_url = urljoin(BASE_URL, href)
+        pdf_url = urljoin(
+            BASE_URL,
+            href
+        )
 
-        if ".pdf" not in full_url.lower():
+        # We only want actual PDF files.
+        if ".pdf" not in pdf_url.lower():
             continue
 
-        if "advertisement" not in title.lower() and "advt" not in title.lower():
+        # UPSC advertisement links.
+        if not re.search(
+            r"advt|advertisement",
+            title,
+            re.IGNORECASE
+        ):
             continue
 
         advertisements.append({
             "advertisement": title,
-            "pdf_url": full_url
+            "pdf_url": pdf_url
         })
 
-    # Remove duplicates
+    # Remove duplicates.
     unique = []
     seen = set()
 
     for item in advertisements:
-        if item["pdf_url"] not in seen:
-            seen.add(item["pdf_url"])
-            unique.append(item)
+
+        if item["pdf_url"] in seen:
+            continue
+
+        seen.add(item["pdf_url"])
+        unique.append(item)
 
     return unique
 
 
 def download_pdf(url):
-    print("Downloading PDF:")
-    print(url)
 
     response = requests.get(
         url,
         headers=HEADERS,
-        timeout=60
+        timeout=90
     )
 
     response.raise_for_status()
@@ -92,7 +112,8 @@ def download_pdf(url):
     return response.content
 
 
-def pdf_to_text(pdf_bytes):
+def extract_pdf_text(pdf_bytes):
+
     document = fitz.open(
         stream=pdf_bytes,
         filetype="pdf"
@@ -110,11 +131,12 @@ def pdf_to_text(pdf_bytes):
     return "\n".join(pages)
 
 
-def find_value(text, pattern):
+def find(pattern, text):
+
     match = re.search(
         pattern,
         text,
-        flags=re.IGNORECASE
+        re.IGNORECASE | re.DOTALL
     )
 
     if not match:
@@ -123,202 +145,127 @@ def find_value(text, pattern):
     return clean(match.group(1))
 
 
-def parse_vacancies(text):
-    """
-    UPSC recruitment PDFs generally use:
+def parse_jobs(text):
 
-    1. (Vacancy No. XXXXX) ...
-    2. (Vacancy No. XXXXX) ...
-
-    We split the PDF into individual vacancies.
-    """
-
-    pattern = r"(?=\d+\.\s*\(Vacancy No\.)"
-
+    # UPSC PDFs use:
+    #
+    # 1. (Vacancy No. XXXXX)
+    # 2. (Vacancy No. XXXXX)
+    #
     blocks = re.split(
-        pattern,
+        r"(?=\d+\.\s*\(Vacancy No\.)",
         text
     )
 
-    vacancies = []
+    jobs = []
 
     for block in blocks:
 
         block = clean(block)
 
-        if not re.search(
-            r"\(Vacancy No\.",
-            block,
-            re.IGNORECASE
-        ):
+        if "Vacancy No." not in block:
             continue
 
-        vacancy = parse_single_vacancy(block)
-
-        if vacancy:
-            vacancies.append(vacancy)
-
-    return vacancies
-
-
-def parse_single_vacancy(block):
-
-    vacancy_number = find_value(
-        block,
-        r"\(Vacancy No\.\s*([0-9]+)"
-    )
-
-    if not vacancy_number:
-        return None
-
-    # -------------------------------------------------
-    # POST NAME + VACANCY COUNT
-    # -------------------------------------------------
-
-    post_match = re.search(
-        r"\(Vacancy No\.\s*[0-9]+\)\s*"
-        r"(.+?)"
-        r"(?:\.|,)\s*"
-        r"(?:in|under|at)\s+",
-        block,
-        re.IGNORECASE
-    )
-
-    post_name = None
-    vacancy_count = None
-
-    if post_match:
-
-        post_name = clean(
-            post_match.group(1)
+        vacancy_number = find(
+            r"Vacancy No\.\s*([0-9]+)",
+            block
         )
 
-    # Search phrases such as:
-    # Four vacancies
-    # Sixty vacancies
-    # One vacancy
-    # 10 vacancies
+        if not vacancy_number:
+            continue
 
-    vacancy_match = re.search(
-        r"(\d+|one|two|three|four|five|six|seven|eight|nine|ten|"
-        r"eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|"
-        r"eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|"
-        r"eighty|ninety|hundred)\s+vacancies?",
-        block,
-        re.IGNORECASE
-    )
-
-    if vacancy_match:
-        vacancy_count = clean(
-            vacancy_match.group(1)
+        # Example:
+        # Four vacancies for the post of Specialist...
+        # Sixty vacancies for the post of...
+        post = find(
+            r"Vacancy No\.\s*[0-9]+\)\s*"
+            r"(?:one|two|three|four|five|six|seven|eight|nine|ten|"
+            r"eleven|twelve|thirteen|fourteen|fifteen|sixteen|"
+            r"seventeen|eighteen|nineteen|twenty|thirty|forty|"
+            r"fifty|sixty|seventy|eighty|ninety|hundred|\d+)"
+            r"\s+vacancies?\s+for\s+the\s+post\s+of\s+"
+            r"(.+?)(?=\s+in\s+|\.)",
+            block
         )
 
-    # -------------------------------------------------
-    # DEPARTMENT / MINISTRY
-    # -------------------------------------------------
-
-    department = None
-
-    department_match = re.search(
-        r"(?:in|under)\s+(.{5,250}?)"
-        r"(?:\.|RESERVATION POSITION:)",
-        block,
-        re.IGNORECASE
-    )
-
-    if department_match:
-        department = clean(
-            department_match.group(1)
+        vacancy_count = find(
+            r"Vacancy No\.\s*[0-9]+\)\s*"
+            r"([A-Za-z0-9 -]+?)\s+vacancies?",
+            block
         )
 
-    # -------------------------------------------------
-    # PAY SCALE
-    # -------------------------------------------------
-
-    pay_scale = find_value(
-        block,
-        r"PAY SCALE:\s*(.*?)(?=AGE:|ESSENTIAL QUALIFICATIONS:)"
-    )
-
-    # -------------------------------------------------
-    # AGE
-    # -------------------------------------------------
-
-    age_limit = find_value(
-        block,
-        r"AGE:\s*(.*?)(?=ESSENTIAL QUALIFICATIONS:|DUTIES:)"
-    )
-
-    # -------------------------------------------------
-    # QUALIFICATION
-    # -------------------------------------------------
-
-    qualification = find_value(
-        block,
-        r"ESSENTIAL QUALIFICATIONS:\s*"
-        r"(.*?)(?=DESIRABLE QUALIFICATIONS:|DUTIES:|OTHER DETAILS:)"
-    )
-
-    # -------------------------------------------------
-    # EXPERIENCE
-    # -------------------------------------------------
-
-    experience = None
-
-    experience_match = re.search(
-        r"(?:\(B\)\s*EXPERIENCE:|EXPERIENCE:)\s*"
-        r"(.*?)(?=DESIRABLE QUALIFICATIONS:|NOTE\s+1:|DUTIES:)",
-        block,
-        re.IGNORECASE
-    )
-
-    if experience_match:
-        experience = clean(
-            experience_match.group(1)
+        department = find(
+            r"vacancies?\s+for\s+the\s+post\s+of\s+.+?"
+            r"\s+in\s+(.+?)(?=\.\s+RESERVATION POSITION:)",
+            block
         )
 
-    # -------------------------------------------------
-    # HEADQUARTERS
-    # -------------------------------------------------
+        pay_scale = find(
+            r"PAY SCALE:\s*(.+?)(?=\s+AGE:)",
+            block
+        )
 
-    headquarters = find_value(
-        block,
-        r"HEADQUARTERS:\s*(.*?)(?=ANY OTHER CONDITIONS:|$)"
-    )
+        age_limit = find(
+            r"AGE:\s*(.+?)(?=\s+ESSENTIAL QUALIFICATIONS:)",
+            block
+        )
 
-    # -------------------------------------------------
-    # PROBATION
-    # -------------------------------------------------
+        qualification = find(
+            r"ESSENTIAL QUALIFICATIONS:\s*"
+            r"(.+?)(?=\s+DUTIES:|\s+DESIRABLE QUALIFICATIONS:|"
+            r"\s+NOTE 1:)",
+            block
+        )
 
-    probation = find_value(
-        block,
-        r"PROBATION:\s*(.*?)(?=HEADQUARTERS:|$)"
-    )
+        experience = find(
+            r"\(B\)\s*EXPERIENCE:\s*(.+?)(?=\s+NOTE 1:|"
+            r"\s+DUTIES:)",
+            block
+        )
 
-    return {
-        "vacancy_number": vacancy_number,
-        "post_name": post_name,
-        "vacancy_count": vacancy_count,
-        "department": department,
-        "pay_scale": pay_scale,
-        "age_limit": age_limit,
-        "qualification": qualification,
-        "experience": experience,
-        "probation": probation,
-        "headquarters": headquarters
-    }
+        probation = find(
+            r"PROBATION:\s*(.+?)(?=\s+HEADQUARTERS:)",
+            block
+        )
+
+        headquarters = find(
+            r"HEADQUARTERS:\s*(.+?)(?=\s+ANY OTHER CONDITIONS:|$)",
+            block
+        )
+
+        reservation = find(
+            r"RESERVATION POSITION:\s*(.+?)(?=\s+The post|\s+Category-wise)",
+            block
+        )
+
+        jobs.append({
+            "vacancy_number": vacancy_number,
+            "post_name": post,
+            "vacancy_count": vacancy_count,
+            "department": department,
+            "reservation": reservation,
+            "pay_scale": pay_scale,
+            "age_limit": age_limit,
+            "qualification": qualification,
+            "experience": experience,
+            "probation": probation,
+            "headquarters": headquarters
+        })
+
+    return jobs
 
 
 def main():
 
     print("=" * 70)
-    print("UPSC JOB DETAILS SCRAPER")
+    print("UPSC JOB SCRAPER")
     print("=" * 70)
 
-    advertisements = get_latest_advertisements()
+    advertisements = get_advertisement_pdfs()
 
     print(
-        f"Found {len(advertisements)} recruitment PDF(s)."
+        "Advertisement PDFs found:",
+        len(advertisements)
     )
 
     all_jobs = []
@@ -326,28 +273,24 @@ def main():
     for advertisement in advertisements:
 
         print()
-        print("=" * 70)
         print(
-            "ADVERTISEMENT:",
+            "PROCESSING:",
             advertisement["advertisement"]
         )
 
         try:
 
-            pdf_bytes = download_pdf(
+            pdf = download_pdf(
                 advertisement["pdf_url"]
             )
 
-            text = pdf_to_text(
-                pdf_bytes
-            )
+            text = extract_pdf_text(pdf)
 
-            jobs = parse_vacancies(
-                text
-            )
+            jobs = parse_jobs(text)
 
             print(
-                f"Jobs extracted: {len(jobs)}"
+                "Jobs found:",
+                len(jobs)
             )
 
             for job in jobs:
@@ -368,28 +311,20 @@ def main():
 
                 job["source"] = BASE_URL
 
-                job["scraped_at"] = (
-                    datetime.now(
-                        timezone.utc
-                    ).isoformat()
-                )
-
                 all_jobs.append(job)
 
         except Exception as error:
 
             print(
                 "ERROR:",
-                error
+                str(error)
             )
 
-    # -------------------------------------------------
-    # SAVE FINAL DATABASE
-    # -------------------------------------------------
-
-    output = {
+    result = {
         "source": BASE_URL,
-        "organization": "Union Public Service Commission",
+        "organization": (
+            "Union Public Service Commission"
+        ),
         "scraped_at": datetime.now(
             timezone.utc
         ).isoformat(),
@@ -404,7 +339,7 @@ def main():
     ) as file:
 
         json.dump(
-            output,
+            result,
             file,
             ensure_ascii=False,
             indent=2
@@ -412,14 +347,12 @@ def main():
 
     print()
     print("=" * 70)
-    print("DONE")
     print(
-        f"TOTAL JOBS: {len(all_jobs)}"
+        "TOTAL JOBS EXTRACTED:",
+        len(all_jobs)
     )
-    print("data.json created")
     print("=" * 70)
 
 
 if __name__ == "__main__":
     main()
-    
