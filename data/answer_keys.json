@@ -1794,7 +1794,7 @@
     ],
     "key_values": {
       "HELPDESK": "011-24041001 / 011-40303444",
-      "Visitor No": "862665825",
+      "Visitor No": "862668922",
       "(Since": "15 Sep 2016)"
     },
     "job_fields": {}
@@ -2167,12 +2167,8 @@
     "category": "answer_keys",
     "documents": [
       {
-        "title": "(843.66 KB)",
-        "url": "https://www.upsc.gov.in/sites/default/files/AdvtNo-12-2026-Engl-250926_0.pdf"
-      },
-      {
-        "title": "(3.06 MB)",
-        "url": "https://www.upsc.gov.in/sites/default/files/AdvtNo-11-2026-Engl-100926.pdf"
+        "title": "(1.49 MB)",
+        "url": "https://www.upsc.gov.in/sites/default/files/AdvtNo-52-2026-Special-Engl-210826.pdf"
       }
     ],
     "links": [
@@ -2417,13 +2413,8 @@
         "document": false
       },
       {
-        "title": "(843.66 KB)",
-        "url": "https://www.upsc.gov.in/sites/default/files/AdvtNo-12-2026-Engl-250926_0.pdf",
-        "document": true
-      },
-      {
-        "title": "(3.06 MB)",
-        "url": "https://www.upsc.gov.in/sites/default/files/AdvtNo-11-2026-Engl-100926.pdf",
+        "title": "(1.49 MB)",
+        "url": "https://www.upsc.gov.in/sites/default/files/AdvtNo-52-2026-Special-Engl-210826.pdf",
         "document": true
       },
       {
@@ -2470,7 +2461,7 @@
     "tables": [],
     "key_values": {
       "HELPDESK": "011-24041001 / 011-40303444",
-      "Visitor No": "862664783",
+      "Visitor No": "862668013",
       "(Since": "15 Sep 2016)"
     },
     "job_fields": {}
