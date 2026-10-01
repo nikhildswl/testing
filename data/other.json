@@ -17,6 +17,11 @@
         "document": false
       },
       {
+        "title": "",
+        "url": "https://www.upsc.gov.in/rss.php",
+        "document": false
+      },
+      {
         "title": "English",
         "url": "https://www.upsc.gov.in/site-map",
         "document": false
@@ -725,18 +730,13 @@
         "title": "डिस्क्लेमर",
         "url": "https://www.upsc.gov.in/hi/%E0%A4%A1%E0%A4%BF%E0%A4%B8%E0%A5%8D%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A5%87%E0%A4%AE%E0%A4%B0",
         "document": false
-      },
-      {
-        "title": "अकीको शर्मन इन्फोटेक",
-        "url": "http://www.akikosherman.com",
-        "document": false
       }
     ],
     "tables": [],
     "key_values": {
       "हेल्पडेस्क": "011-24041001 / 011-40303444",
       "प्राय": "पूछे जाने वाले प्रश्न",
-      "आगंतुक संo": "862701863",
+      "आगंतुक संo": "862667003",
       "(अवधि": "15 सितम्बर 2016 से)"
     },
     "job_fields": {}
