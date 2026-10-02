@@ -30,6 +30,11 @@
         "document": false
       },
       {
+        "title": "",
+        "url": "https://www.upsc.gov.in/rss.php",
+        "document": false
+      },
+      {
         "title": "हिन्दी",
         "url": "https://www.upsc.gov.in/hi",
         "document": false
@@ -688,11 +693,6 @@
         "title": "Disclaimer",
         "url": "https://www.upsc.gov.in/disclaimer-",
         "document": false
-      },
-      {
-        "title": "Akiko Sherman Infotech",
-        "url": "http://www.akikosherman.com",
-        "document": false
       }
     ],
     "tables": [
@@ -722,8 +722,8 @@
       "Written Result": "Combined Section Officers' (Grade 'B') LDCE-2025 and Combined Stenographers' (Grade 'B'-Grade-'I') LDCE-2019, 2020 & 2021",
       "Marks of Recommended Candidates (Reserve List)": "Central Armed Police Forces (ACs) Examination, 2024",
       "To apply for examinations visit new Application Portal - https": "//upsconline.nic.in",
-      "Visitor No": "862671735",
-      "(Since": "15 Sep 2016)(133)"
+      "Visitor No": "862675084",
+      "(Since": "15 Sep 2016)(132)"
     },
     "job_fields": {}
   },
@@ -1484,7 +1484,7 @@
     ],
     "key_values": {
       "HELPDESK": "011-24041001 / 011-40303444",
-      "Visitor No": "862664706",
+      "Visitor No": "862673539",
       "(Since": "15 Sep 2016)"
     },
     "job_fields": {}
@@ -2183,10 +2183,6 @@
       {
         "title": "(843.66 KB)",
         "url": "https://www.upsc.gov.in/sites/default/files/AdvtNo-12-2026-Engl-250926_0.pdf"
-      },
-      {
-        "title": "(3.06 MB)",
-        "url": "https://www.upsc.gov.in/sites/default/files/AdvtNo-11-2026-Engl-100926.pdf"
       }
     ],
     "links": [
@@ -2198,6 +2194,11 @@
       {
         "title": "",
         "url": "https://www.linkedin.com/company/official-union-public-service-commission",
+        "document": false
+      },
+      {
+        "title": "",
+        "url": "https://www.upsc.gov.in/rss.php",
         "document": false
       },
       {
@@ -2431,11 +2432,6 @@
         "document": true
       },
       {
-        "title": "(3.06 MB)",
-        "url": "https://www.upsc.gov.in/sites/default/files/AdvtNo-11-2026-Engl-100926.pdf",
-        "document": true
-      },
-      {
         "title": "View Archives >>",
         "url": "https://www.upsc.gov.in/recruitment/recruitment-advertisement/archives-",
         "document": false
@@ -2474,17 +2470,12 @@
         "title": "Disclaimer",
         "url": "https://www.upsc.gov.in/disclaimer-",
         "document": false
-      },
-      {
-        "title": "Akiko Sherman Infotech",
-        "url": "http://www.akikosherman.com",
-        "document": false
       }
     ],
     "tables": [],
     "key_values": {
       "HELPDESK": "011-24041001 / 011-40303444",
-      "Visitor No": "862670203",
+      "Visitor No": "862684183",
       "(Since": "15 Sep 2016)"
     },
     "job_fields": {}
