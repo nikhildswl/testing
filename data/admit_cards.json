@@ -247,13 +247,8 @@
         "document": false
       },
       {
-        "title": "E-Admit Cards for various Examinations of UPSC",
-        "url": "https://upsconline.nic.in",
-        "document": false
-      },
-      {
         "title": "E-Admit Cards for various Recruitment Posts",
-        "url": "https://upsconline.gov.in/oraadmitcard",
+        "url": "https://upsconline.nic.in",
         "document": false
       },
       {
@@ -310,7 +305,7 @@
     "tables": [],
     "key_values": {
       "HELPDESK": "011-24041001 / 011-40303444",
-      "Visitor No": "862671053",
+      "Visitor No": "862681261",
       "(Since": "15 Sep 2016)"
     },
     "job_fields": {}

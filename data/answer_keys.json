@@ -722,7 +722,7 @@
       "Written Result": "Combined Section Officers' (Grade 'B') LDCE-2025 and Combined Stenographers' (Grade 'B'-Grade-'I') LDCE-2019, 2020 & 2021",
       "Marks of Recommended Candidates (Reserve List)": "Central Armed Police Forces (ACs) Examination, 2024",
       "To apply for examinations visit new Application Portal - https": "//upsconline.nic.in",
-      "Visitor No": "862686700",
+      "Visitor No": "862683036",
       "(Since": "15 Sep 2016)(133)"
     },
     "job_fields": {}
@@ -970,11 +970,6 @@
         "document": false
       },
       {
-        "title": "Indian Forest Service (Main) Examination, 2026",
-        "url": "https://www.upsc.gov.in/examinations/Indian%20Forest%20Service%20%28Main%29%20Examination%2C%202026",
-        "document": false
-      },
-      {
         "title": "Engineering Services (Preliminary) Examination, 2027",
         "url": "https://www.upsc.gov.in/examinations/Engineering%20Services%20%28Preliminary%29%20Examination%2C%202027",
         "document": false
@@ -987,6 +982,11 @@
       {
         "title": "Combined Geo-Scientist (Preliminary) Examination, 2027",
         "url": "https://www.upsc.gov.in/examinations/Combined%20Geo-Scientist%20%28Preliminary%29%20Examination%2C%202027",
+        "document": false
+      },
+      {
+        "title": "Combined Defence Services Examination (II), 2025 (OTA)",
+        "url": "https://www.upsc.gov.in/examinations/Combined%20Defence%20Services%20Examination%20%28II%29%2C%202025%20%28OTA%29",
         "document": false
       },
       {
@@ -1070,6 +1070,16 @@
         "document": false
       },
       {
+        "title": "Combined Defence Services Examination (II), 2025",
+        "url": "https://www.upsc.gov.in/examinations/Combined%20Defence%20Services%20Examination%20%28II%29%2C%202025",
+        "document": false
+      },
+      {
+        "title": "Central Armed Police Forces (ACs) Examination, 2025",
+        "url": "https://www.upsc.gov.in/examinations/Central%20Armed%20Police%20Forces%20%28ACs%29%20Examination%2C%202025",
+        "document": false
+      },
+      {
         "title": "Central Armed Police Forces (ACs) Examination, 2024",
         "url": "https://www.upsc.gov.in/examinations/Central%20Armed%20Police%20Forces%20%28ACs%29%20Examination%2C%202024",
         "document": false
@@ -1118,7 +1128,7 @@
     "tables": [],
     "key_values": {
       "HELPDESK": "011-24041001 / 011-40303444",
-      "Visitor No": "862710719",
+      "Visitor No": "862696473",
       "(Since": "15 Sep 2016)"
     },
     "job_fields": {}
@@ -1155,11 +1165,6 @@
       {
         "title": "",
         "url": "https://www.linkedin.com/company/official-union-public-service-commission",
-        "document": false
-      },
-      {
-        "title": "",
-        "url": "https://www.upsc.gov.in/rss.php",
         "document": false
       },
       {
@@ -1446,6 +1451,11 @@
         "title": "Disclaimer",
         "url": "https://www.upsc.gov.in/disclaimer-",
         "document": false
+      },
+      {
+        "title": "Akiko Sherman Infotech",
+        "url": "http://www.akikosherman.com",
+        "document": false
       }
     ],
     "tables": [
@@ -1474,7 +1484,7 @@
     ],
     "key_values": {
       "HELPDESK": "011-24041001 / 011-40303444",
-      "Visitor No": "862664706",
+      "Visitor No": "862681269",
       "(Since": "15 Sep 2016)"
     },
     "job_fields": {}
