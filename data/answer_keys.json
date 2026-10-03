@@ -30,6 +30,11 @@
         "document": false
       },
       {
+        "title": "",
+        "url": "https://www.upsc.gov.in/rss.php",
+        "document": false
+      },
+      {
         "title": "हिन्दी",
         "url": "https://www.upsc.gov.in/hi",
         "document": false
@@ -688,11 +693,6 @@
         "title": "Disclaimer",
         "url": "https://www.upsc.gov.in/disclaimer-",
         "document": false
-      },
-      {
-        "title": "Akiko Sherman Infotech",
-        "url": "http://www.akikosherman.com",
-        "document": false
       }
     ],
     "tables": [
@@ -722,8 +722,8 @@
       "Written Result": "Combined Section Officers' (Grade 'B') LDCE-2025 and Combined Stenographers' (Grade 'B'-Grade-'I') LDCE-2019, 2020 & 2021",
       "Marks of Recommended Candidates (Reserve List)": "Central Armed Police Forces (ACs) Examination, 2024",
       "To apply for examinations visit new Application Portal - https": "//upsconline.nic.in",
-      "Visitor No": "862683036",
-      "(Since": "15 Sep 2016)(133)"
+      "Visitor No": "862690523",
+      "(Since": "15 Sep 2016)(131)"
     },
     "job_fields": {}
   },
@@ -1168,6 +1168,11 @@
         "document": false
       },
       {
+        "title": "",
+        "url": "https://www.upsc.gov.in/rss.php",
+        "document": false
+      },
+      {
         "title": "हिन्दी",
         "url": "https://www.upsc.gov.in/hi/examinations/exam-calendar",
         "document": false
@@ -1451,11 +1456,6 @@
         "title": "Disclaimer",
         "url": "https://www.upsc.gov.in/disclaimer-",
         "document": false
-      },
-      {
-        "title": "Akiko Sherman Infotech",
-        "url": "http://www.akikosherman.com",
-        "document": false
       }
     ],
     "tables": [
@@ -1484,7 +1484,7 @@
     ],
     "key_values": {
       "HELPDESK": "011-24041001 / 011-40303444",
-      "Visitor No": "862681269",
+      "Visitor No": "862664706",
       "(Since": "15 Sep 2016)"
     },
     "job_fields": {}
