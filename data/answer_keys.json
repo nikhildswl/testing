@@ -30,11 +30,6 @@
         "document": false
       },
       {
-        "title": "",
-        "url": "https://www.upsc.gov.in/rss.php",
-        "document": false
-      },
-      {
         "title": "हिन्दी",
         "url": "https://www.upsc.gov.in/hi",
         "document": false
@@ -275,6 +270,116 @@
         "document": true
       },
       {
+        "title": "Provisional Answer Key: 32 Posts of Accounts Officer, Administration of Union Territory of Ladakh",
+        "url": "https://www.upsc.gov.in/whats-new/32 Posts of Accounts Officer, Administration of Union Territory of Ladakh/Provisional Answer Key",
+        "document": false
+      },
+      {
+        "title": "Provisional Answer Key: 19 Posts of Manager Grade - I - Section Officer, Ministry of Defence",
+        "url": "https://www.upsc.gov.in/whats-new/19 Posts of Manager Grade - I - Section Officer, Ministry of Defence/Provisional Answer Key",
+        "document": false
+      },
+      {
+        "title": "Provisional Answer Key: 08 Posts of Administrative Officer Grade - I, Ministry of Defence",
+        "url": "https://www.upsc.gov.in/whats-new/08 Posts of Administrative Officer Grade - I, Ministry of Defence/Provisional Answer Key",
+        "document": false
+      },
+      {
+        "title": "Notice: 32 Posts of Accounts Officer, Administration of Union Territory of Ladakh",
+        "url": "https://www.upsc.gov.in/whats-new/32 Posts of Accounts Officer, Administration of Union Territory of Ladakh/Notice",
+        "document": false
+      },
+      {
+        "title": "Notice: 19 Posts of Manager Grade - I - Section Officer, Ministry of Defence",
+        "url": "https://www.upsc.gov.in/whats-new/19 Posts of Manager Grade - I - Section Officer, Ministry of Defence/Notice",
+        "document": false
+      },
+      {
+        "title": "Notice: 08 Posts of Administrative Officer Grade - I, Ministry of Defence",
+        "url": "https://www.upsc.gov.in/whats-new/08 Posts of Administrative Officer Grade - I, Ministry of Defence/Notice",
+        "document": false
+      },
+      {
+        "title": "Final Result: 363 Posts of Principal in Education Department, GNCTD",
+        "url": "https://www.upsc.gov.in/whats-new/363 Posts of Principal in Education Department, GNCTD/Final Result",
+        "document": false
+      },
+      {
+        "title": "Rectt. Test: 09 posts of Scientist-B (Instrumentation) in Ministry of Earth Sciences",
+        "url": "https://www.upsc.gov.in/whats-new/09 posts of Scientist-B (Instrumentation) in Ministry of Earth Sciences/Rectt. Test",
+        "document": false
+      },
+      {
+        "title": "Rectt. Test: 30 posts of Scientist-B (General Meteorology) in Ministry of Earth Sciences",
+        "url": "https://www.upsc.gov.in/whats-new/30 posts of Scientist-B (General Meteorology) in Ministry of Earth Sciences/Rectt. Test",
+        "document": false
+      },
+      {
+        "title": "Rectt. Test: 07 posts of Scientist-B (Atmospheric Sciences) in Ministry of Earth Sciences",
+        "url": "https://www.upsc.gov.in/whats-new/07 posts of Scientist-B (Atmospheric Sciences) in Ministry of Earth Sciences/Rectt. Test",
+        "document": false
+      },
+      {
+        "title": "Rectt. Test: 04 posts of Assistant Director Grade-II (IEDS) (Leather & Footwear) in Ministry of MSME",
+        "url": "https://www.upsc.gov.in/whats-new/04 posts of Assistant Director Grade-II (IEDS) (Leather & Footwear) in Ministry of MSME/Rectt. Test",
+        "document": false
+      },
+      {
+        "title": "Rectt. Test: 04 posts of Assistant Director Grade-II (IEDS) (Hosiery) in Ministry of MSME",
+        "url": "https://www.upsc.gov.in/whats-new/04 posts of Assistant Director Grade-II (IEDS) (Hosiery) in Ministry of MSME/Rectt. Test",
+        "document": false
+      },
+      {
+        "title": "Rectt. Test: 04 posts of Assistant Director Grade-II (IEDS) (Food) in Ministry of MSME",
+        "url": "https://www.upsc.gov.in/whats-new/04 posts of Assistant Director Grade-II (IEDS) (Food) in Ministry of MSME/Rectt. Test",
+        "document": false
+      },
+      {
+        "title": "Rectt. Test: 03 posts of Assistant Director Grade-II (IEDS) (Chemical) in Ministry of MSME",
+        "url": "https://www.upsc.gov.in/whats-new/03 posts of Assistant Director Grade-II (IEDS) (Chemical) in Ministry of MSME/Rectt. Test",
+        "document": false
+      },
+      {
+        "title": "Rectt. Test: 01 post of Assistant Director Grade-I (IEDS) (Metal Finishing) in Ministry of MSME",
+        "url": "https://www.upsc.gov.in/whats-new/01 post of Assistant Director Grade-I (IEDS) (Metal Finishing) in Ministry of MSME/Rectt. Test",
+        "document": false
+      },
+      {
+        "title": "Rectt. Test: 03 posts of Assistant Director Grade-I (IEDS) (Leather & Footwear) in Ministry of MSME",
+        "url": "https://www.upsc.gov.in/whats-new/03 posts of Assistant Director Grade-I (IEDS) (Leather & Footwear) in Ministry of MSME/Rectt. Test",
+        "document": false
+      },
+      {
+        "title": "Rectt. Test: 02 posts of Assistant Director Grade-I (IEDS) (Hosiery) in Ministry of MSME",
+        "url": "https://www.upsc.gov.in/whats-new/02 posts of Assistant Director Grade-I (IEDS) (Hosiery) in Ministry of MSME/Rectt. Test",
+        "document": false
+      },
+      {
+        "title": "Rectt. Test: 03 posts of Assistant Director Grade-I (IEDS) (Food) in Ministry of MSME",
+        "url": "https://www.upsc.gov.in/whats-new/03 posts of Assistant Director Grade-I (IEDS) (Food) in Ministry of MSME/Rectt. Test",
+        "document": false
+      },
+      {
+        "title": "Rectt. Test: 02 posts of Assistant Director Grade-I (IEDS) (Chemical) in Ministry of MSME",
+        "url": "https://www.upsc.gov.in/whats-new/02 posts of Assistant Director Grade-I (IEDS) (Chemical) in Ministry of MSME/Rectt. Test",
+        "document": false
+      },
+      {
+        "title": "Rectt. Test: 06 Posts Deputy Central Intelligence Officer (DCIO) (Technical), Ministry of Home Affairs",
+        "url": "https://www.upsc.gov.in/whats-new/06 Posts Deputy Central Intelligence Officer (DCIO) (Technical), Ministry of Home Affairs/Rectt. Test",
+        "document": false
+      },
+      {
+        "title": "Interview Schedule: Combined Medical Services Examination, 2026",
+        "url": "https://www.upsc.gov.in/whats-new/Combined%20Medical%20Services%20Examination%2C%202026/Interview%20Schedule",
+        "document": false
+      },
+      {
+        "title": "Advertisement No.12 - 2026",
+        "url": "https://www.upsc.gov.in/whats-new/12 - 2026",
+        "document": false
+      },
+      {
         "title": "Notice: 74 Posts of Assistant Provident Fund Commissioner, EPFO",
         "url": "https://www.upsc.gov.in/whats-new/74 Posts of Assistant Provident Fund Commissioner, EPFO/Notice",
         "document": false
@@ -287,21 +392,6 @@
       {
         "title": "Notice: 18 Posts of Veterinary Assistant Surgeon, Government of Puducherry",
         "url": "https://www.upsc.gov.in/whats-new/18 Posts of Veterinary Assistant Surgeon, Government of Puducherry/Notice",
-        "document": false
-      },
-      {
-        "title": "Rectt. Test: 32 Posts of Accounts Officer, Administration of Union Territory of Ladakh",
-        "url": "https://www.upsc.gov.in/whats-new/32 Posts of Accounts Officer, Administration of Union Territory of Ladakh/Rectt. Test",
-        "document": false
-      },
-      {
-        "title": "Rectt. Test: 19 Posts of Manager Grade - I - Section Officer, Ministry of Defence",
-        "url": "https://www.upsc.gov.in/whats-new/19 Posts of Manager Grade - I - Section Officer, Ministry of Defence/Rectt. Test",
-        "document": false
-      },
-      {
-        "title": "Rectt. Test: 08 Posts of Administrative Officer Grade - I, Ministry of Defence",
-        "url": "https://www.upsc.gov.in/whats-new/08 Posts of Administrative Officer Grade - I, Ministry of Defence/Rectt. Test",
         "document": false
       },
       {
@@ -340,71 +430,6 @@
         "document": false
       },
       {
-        "title": "Addendum Notice: 09 posts of Scientist-B (Instrumentation) in Ministry of Earth Sciences",
-        "url": "https://www.upsc.gov.in/whats-new/09 posts of Scientist-B (Instrumentation) in Ministry of Earth Sciences/Addendum Notice",
-        "document": false
-      },
-      {
-        "title": "Addendum Notice: 30 posts of Scientist-B (General Meteorology) in Ministry of Earth Sciences",
-        "url": "https://www.upsc.gov.in/whats-new/30 posts of Scientist-B (General Meteorology) in Ministry of Earth Sciences/Addendum Notice",
-        "document": false
-      },
-      {
-        "title": "Addendum Notice: 07 posts of Scientist-B (Atmospheric Sciences) in Ministry of Earth Sciences",
-        "url": "https://www.upsc.gov.in/whats-new/07 posts of Scientist-B (Atmospheric Sciences) in Ministry of Earth Sciences/Addendum Notice",
-        "document": false
-      },
-      {
-        "title": "Addendum Notice: 04 posts of Assistant Director Grade-II (IEDS) (Leather & Footwear) in Ministry of MSME",
-        "url": "https://www.upsc.gov.in/whats-new/04 posts of Assistant Director Grade-II (IEDS) (Leather & Footwear) in Ministry of MSME/Addendum Notice",
-        "document": false
-      },
-      {
-        "title": "Addendum Notice: 04 posts of Assistant Director Grade-II (IEDS) (Hosiery) in Ministry of MSME",
-        "url": "https://www.upsc.gov.in/whats-new/04 posts of Assistant Director Grade-II (IEDS) (Hosiery) in Ministry of MSME/Addendum Notice",
-        "document": false
-      },
-      {
-        "title": "Addendum Notice: 04 posts of Assistant Director Grade-II (IEDS) (Food) in Ministry of MSME",
-        "url": "https://www.upsc.gov.in/whats-new/04 posts of Assistant Director Grade-II (IEDS) (Food) in Ministry of MSME/Addendum Notice",
-        "document": false
-      },
-      {
-        "title": "Addendum Notice: 03 posts of Assistant Director Grade-II (IEDS) (Chemical) in Ministry of MSME",
-        "url": "https://www.upsc.gov.in/whats-new/03 posts of Assistant Director Grade-II (IEDS) (Chemical) in Ministry of MSME/Addendum Notice",
-        "document": false
-      },
-      {
-        "title": "Addendum Notice: 01 post of Assistant Director Grade-I (IEDS) (Metal Finishing) in Ministry of MSME",
-        "url": "https://www.upsc.gov.in/whats-new/01 post of Assistant Director Grade-I (IEDS) (Metal Finishing) in Ministry of MSME/Addendum Notice",
-        "document": false
-      },
-      {
-        "title": "Addendum Notice: 03 posts of Assistant Director Grade-I (IEDS) (Leather & Footwear) in Ministry of MSME",
-        "url": "https://www.upsc.gov.in/whats-new/03 posts of Assistant Director Grade-I (IEDS) (Leather & Footwear) in Ministry of MSME/Addendum Notice",
-        "document": false
-      },
-      {
-        "title": "Addendum Notice: 02 posts of Assistant Director Grade-I (IEDS) (Hosiery) in Ministry of MSME",
-        "url": "https://www.upsc.gov.in/whats-new/02 posts of Assistant Director Grade-I (IEDS) (Hosiery) in Ministry of MSME/Addendum Notice",
-        "document": false
-      },
-      {
-        "title": "Addendum Notice: 03 posts of Assistant Director Grade-I (IEDS) (Food) in Ministry of MSME",
-        "url": "https://www.upsc.gov.in/whats-new/03 posts of Assistant Director Grade-I (IEDS) (Food) in Ministry of MSME/Addendum Notice",
-        "document": false
-      },
-      {
-        "title": "Addendum Notice: 02 posts of Assistant Director Grade-I (IEDS) (Chemical) in Ministry of MSME",
-        "url": "https://www.upsc.gov.in/whats-new/02 posts of Assistant Director Grade-I (IEDS) (Chemical) in Ministry of MSME/Addendum Notice",
-        "document": false
-      },
-      {
-        "title": "Addendum Notice: 06 Posts Deputy Central Intelligence Officer (DCIO) (Technical), Ministry of Home Affairs",
-        "url": "https://www.upsc.gov.in/whats-new/06 Posts Deputy Central Intelligence Officer (DCIO) (Technical), Ministry of Home Affairs/Addendum Notice",
-        "document": false
-      },
-      {
         "title": "Advertisement No.11 - 2026",
         "url": "https://www.upsc.gov.in/whats-new/11 - 2026",
         "document": false
@@ -435,11 +460,6 @@
         "document": false
       },
       {
-        "title": "Notice: 02 Posts of Senior Scientific Assistant (Electrical), Ministry of Defence",
-        "url": "https://www.upsc.gov.in/whats-new/02 Posts of Senior Scientific Assistant (Electrical), Ministry of Defence/Notice",
-        "document": false
-      },
-      {
         "title": "Final Result: CISF AC(EXE) LDCE-2026",
         "url": "https://www.upsc.gov.in/whats-new/CISF%20AC%28EXE%29%20LDCE-2026/Final%20Result",
         "document": false
@@ -460,23 +480,13 @@
         "document": false
       },
       {
-        "title": "Written Result: Central Armed Police Forces (ACs) Examination, 2026",
-        "url": "https://www.upsc.gov.in/whats-new/Central%20Armed%20Police%20Forces%20%28ACs%29%20Examination%2C%202026/Written%20Result",
-        "document": false
-      },
-      {
         "title": "View all »",
         "url": "https://www.upsc.gov.in/whats-new",
         "document": false
       },
       {
-        "title": "Extension of updation-login window for CAPF (ACs), Examination, 2026",
-        "url": "https://www.upsc.gov.in/content/extension-updation-login-window-capf-acs-examination-2026",
-        "document": false
-      },
-      {
-        "title": "CMSE-2026 - Application submission window extended till 23.09.2026 6.00 PM. Candidates may access the form through Login - Examinations - Apply for Examinations - CMSE-2026 Update",
-        "url": "https://www.upsc.gov.in/content/cmse-2026-application-submission-window-extended-till-23092026-600-pm-candidates-may-access",
+        "title": "Important Notice regarding acceptance of e-Affidavit-e-notarized affidavit by the Commission",
+        "url": "https://www.upsc.gov.in/content/important-notice-regarding-acceptance-e-affidavit-e-notarized-affidavit-commission",
         "document": false
       },
       {
@@ -678,14 +688,18 @@
         "title": "Disclaimer",
         "url": "https://www.upsc.gov.in/disclaimer-",
         "document": false
+      },
+      {
+        "title": "Akiko Sherman Infotech",
+        "url": "http://www.akikosherman.com",
+        "document": false
       }
     ],
     "tables": [
       [
         [
           "",
-          "Extension of updation-login window for CAPF (ACs), Examination, 2026",
-          "CMSE-2026 - Application submission window extended till 23.09.2026 6.00 PM. Candidates may access the form through Login - Examinations - Apply for Examinations - CMSE-2026 Update",
+          "Important Notice regarding acceptance of e-Affidavit-e-notarized affidavit by the Commission",
           "Clarification for the post of Assistant Public Prosecutor in Delhi, vide Advt. No. 11 - 2026",
           "Annual Calendar 2027",
           "Advisory to the recommended-selected candidates of UPSC CSE 2025",
@@ -696,20 +710,20 @@
     ],
     "key_values": {
       "HELPDESK": "011-24041001 / 011-40303444",
-      "Notice": "74 Posts of Assistant Provident Fund Commissioner, EPFO",
-      "Rectt. Test": "32 Posts of Accounts Officer, Administration of Union Territory of Ladakh",
+      "Provisional Answer Key": "32 Posts of Accounts Officer, Administration of Union Territory of Ladakh",
+      "Notice": "32 Posts of Accounts Officer, Administration of Union Territory of Ladakh",
+      "Final Result": "363 Posts of Principal in Education Department, GNCTD",
+      "Rectt. Test": "09 posts of Scientist-B (Instrumentation) in Ministry of Earth Sciences",
+      "Interview Schedule": "Combined Medical Services Examination, 2026",
       "Examination Time Table": "Indian Forest Service (Main) Examination, 2026",
       "Exam Notification": "Engineering Services (Preliminary) Examination, 2027",
       "Marks of Recommended Candidates": "Combined Section Officers' (Grade 'B') LDCE-2025 and Combined Stenographers' (Grade 'B'-Grade-'I') LDCE-2019, 2020 & 2021",
       "Written Result (with name)": "Combined Section Officers' (Grade 'B') LDCE-2025 and Combined Stenographers' (Grade 'B'-Grade-'I') LDCE-2019, 2020 & 2021",
       "Written Result": "Combined Section Officers' (Grade 'B') LDCE-2025 and Combined Stenographers' (Grade 'B'-Grade-'I') LDCE-2019, 2020 & 2021",
-      "Addendum Notice": "09 posts of Scientist-B (Instrumentation) in Ministry of Earth Sciences",
-      "Final Result": "02 Posts of Assistant Director Grade-II (IEDS) (Leather & Footwear), Ministry of MSME",
-      "Interview Schedule": "Engineering Services (Main) Examination, 2026",
       "Marks of Recommended Candidates (Reserve List)": "Central Armed Police Forces (ACs) Examination, 2024",
       "To apply for examinations visit new Application Portal - https": "//upsconline.nic.in",
-      "Visitor No": "862679514",
-      "(Since": "15 Sep 2016)(131)"
+      "Visitor No": "862686700",
+      "(Since": "15 Sep 2016)(133)"
     },
     "job_fields": {}
   },
@@ -956,6 +970,11 @@
         "document": false
       },
       {
+        "title": "Indian Forest Service (Main) Examination, 2026",
+        "url": "https://www.upsc.gov.in/examinations/Indian%20Forest%20Service%20%28Main%29%20Examination%2C%202026",
+        "document": false
+      },
+      {
         "title": "Engineering Services (Preliminary) Examination, 2027",
         "url": "https://www.upsc.gov.in/examinations/Engineering%20Services%20%28Preliminary%29%20Examination%2C%202027",
         "document": false
@@ -968,11 +987,6 @@
       {
         "title": "Combined Geo-Scientist (Preliminary) Examination, 2027",
         "url": "https://www.upsc.gov.in/examinations/Combined%20Geo-Scientist%20%28Preliminary%29%20Examination%2C%202027",
-        "document": false
-      },
-      {
-        "title": "Combined Defence Services Examination (II), 2025 (OTA)",
-        "url": "https://www.upsc.gov.in/examinations/Combined%20Defence%20Services%20Examination%20%28II%29%2C%202025%20%28OTA%29",
         "document": false
       },
       {
@@ -1056,16 +1070,6 @@
         "document": false
       },
       {
-        "title": "Combined Defence Services Examination (II), 2025",
-        "url": "https://www.upsc.gov.in/examinations/Combined%20Defence%20Services%20Examination%20%28II%29%2C%202025",
-        "document": false
-      },
-      {
-        "title": "Central Armed Police Forces (ACs) Examination, 2025",
-        "url": "https://www.upsc.gov.in/examinations/Central%20Armed%20Police%20Forces%20%28ACs%29%20Examination%2C%202025",
-        "document": false
-      },
-      {
         "title": "Central Armed Police Forces (ACs) Examination, 2024",
         "url": "https://www.upsc.gov.in/examinations/Central%20Armed%20Police%20Forces%20%28ACs%29%20Examination%2C%202024",
         "document": false
@@ -1114,7 +1118,7 @@
     "tables": [],
     "key_values": {
       "HELPDESK": "011-24041001 / 011-40303444",
-      "Visitor No": "862696473",
+      "Visitor No": "862710719",
       "(Since": "15 Sep 2016)"
     },
     "job_fields": {}
