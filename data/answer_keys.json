@@ -2167,8 +2167,8 @@
     "category": "answer_keys",
     "documents": [
       {
-        "title": "(843.66 KB)",
-        "url": "https://www.upsc.gov.in/sites/default/files/AdvtNo-12-2026-Engl-250926_0.pdf"
+        "title": "(1.49 MB)",
+        "url": "https://www.upsc.gov.in/sites/default/files/AdvtNo-52-2026-Special-Engl-210826.pdf"
       }
     ],
     "links": [
@@ -2180,6 +2180,11 @@
       {
         "title": "",
         "url": "https://www.linkedin.com/company/official-union-public-service-commission",
+        "document": false
+      },
+      {
+        "title": "",
+        "url": "https://www.upsc.gov.in/rss.php",
         "document": false
       },
       {
@@ -2408,8 +2413,8 @@
         "document": false
       },
       {
-        "title": "(843.66 KB)",
-        "url": "https://www.upsc.gov.in/sites/default/files/AdvtNo-12-2026-Engl-250926_0.pdf",
+        "title": "(1.49 MB)",
+        "url": "https://www.upsc.gov.in/sites/default/files/AdvtNo-52-2026-Special-Engl-210826.pdf",
         "document": true
       },
       {
@@ -2451,17 +2456,12 @@
         "title": "Disclaimer",
         "url": "https://www.upsc.gov.in/disclaimer-",
         "document": false
-      },
-      {
-        "title": "Akiko Sherman Infotech",
-        "url": "http://www.akikosherman.com",
-        "document": false
       }
     ],
     "tables": [],
     "key_values": {
       "HELPDESK": "011-24041001 / 011-40303444",
-      "Visitor No": "862741504",
+      "Visitor No": "862668013",
       "(Since": "15 Sep 2016)"
     },
     "job_fields": {}
