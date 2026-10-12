@@ -30,6 +30,11 @@
         "document": false
       },
       {
+        "title": "",
+        "url": "https://www.upsc.gov.in/rss.php",
+        "document": false
+      },
+      {
         "title": "हिन्दी",
         "url": "https://www.upsc.gov.in/hi",
         "document": false
@@ -270,11 +275,6 @@
         "document": true
       },
       {
-        "title": "Written Result: National Defence Academy and Naval Academy Examination (II), 2026",
-        "url": "https://www.upsc.gov.in/whats-new/National%20Defence%20Academy%20and%20Naval%20Academy%20Examination%20%28II%29%2C%202026/Written%20Result",
-        "document": false
-      },
-      {
         "title": "Final Result: 363 Posts of Principal in Education Department, GNCTD",
         "url": "https://www.upsc.gov.in/whats-new/363 Posts of Principal in Education Department, GNCTD/Final Result",
         "document": false
@@ -380,6 +380,16 @@
         "document": false
       },
       {
+        "title": "Exam Notification: Engineering Services (Preliminary) Examination, 2027",
+        "url": "https://www.upsc.gov.in/whats-new/Engineering%20Services%20%28Preliminary%29%20Examination%2C%202027/Exam%20Notification",
+        "document": false
+      },
+      {
+        "title": "Exam Notification: Combined Section Officers (Grade-'B') LDCE - 2026 and Combined Stenographers (Grade - 'B' - Grade - 'I') LDCE - 2022, 2023 and 2024",
+        "url": "https://www.upsc.gov.in/whats-new/Combined%20Section%20Officers%20%28Grade-%27B%27%29%20LDCE%20-%202026%20and%20Combined%20Stenographers%20%28Grade%20-%20%27B%27%20-%20Grade%20-%20%27I%27%29%20LDCE%20-%20%202022%2C%202023%20and%202024/Exam%20Notification",
+        "document": false
+      },
+      {
         "title": "Marks of Recommended Candidates: Combined Section Officers' (Grade 'B') LDCE-2025 and Combined Stenographers' (Grade 'B'-Grade-'I') LDCE-2019, 2020 & 2021",
         "url": "https://www.upsc.gov.in/whats-new/Combined%20Section%20Officers%27%20%28Grade%20%27B%27%29%20LDCE-2025%20and%20Combined%20Stenographers%27%20%28Grade%20%27B%27-Grade-%27I%27%29%20LDCE-2019%2C%202020%20%26%202021/Marks%20of%20Recommended%20Candidates",
         "document": false
@@ -395,6 +405,11 @@
         "document": false
       },
       {
+        "title": "Advertisement No.11 - 2026",
+        "url": "https://www.upsc.gov.in/whats-new/11 - 2026",
+        "document": false
+      },
+      {
         "title": "Marks of Recommended Candidates: CISF AC(EXE) LDCE-2026",
         "url": "https://www.upsc.gov.in/whats-new/CISF%20AC%28EXE%29%20LDCE-2026/Marks%20of%20Recommended%20Candidates",
         "document": false
@@ -405,6 +420,16 @@
         "document": false
       },
       {
+        "title": "Written Result (with name): Central Armed Police Forces (ACs) Examination, 2026",
+        "url": "https://www.upsc.gov.in/whats-new/Central%20Armed%20Police%20Forces%20%28ACs%29%20Examination%2C%202026/Written%20Result%20%28with%20name%29",
+        "document": false
+      },
+      {
+        "title": "Final Result: 03 Posts of Assistant Director Grade-II (IEDS) (Chemical), Ministry of MSME",
+        "url": "https://www.upsc.gov.in/whats-new/03 Posts of Assistant Director Grade-II (IEDS) (Chemical), Ministry of MSME/Final Result",
+        "document": false
+      },
+      {
         "title": "Interview Schedule: Engineering Services (Main) Examination, 2026",
         "url": "https://www.upsc.gov.in/whats-new/Engineering%20Services%20%28Main%29%20Examination%2C%202026/Interview%20Schedule",
         "document": false
@@ -412,11 +437,6 @@
       {
         "title": "View all »",
         "url": "https://www.upsc.gov.in/whats-new",
-        "document": false
-      },
-      {
-        "title": "the documentation page",
-        "url": "https://www.drupal.org/node/2487215",
         "document": false
       },
       {
@@ -623,11 +643,6 @@
         "title": "Disclaimer",
         "url": "https://www.upsc.gov.in/disclaimer-",
         "document": false
-      },
-      {
-        "title": "Akiko Sherman Infotech",
-        "url": "http://www.akikosherman.com",
-        "document": false
       }
     ],
     "tables": [
@@ -645,18 +660,18 @@
     ],
     "key_values": {
       "HELPDESK": "011-24041001 / 011-40303444",
-      "Written Result": "National Defence Academy and Naval Academy Examination (II), 2026",
       "Final Result": "363 Posts of Principal in Education Department, GNCTD",
       "Rectt. Test": "09 posts of Scientist-B (Instrumentation) in Ministry of Earth Sciences",
       "Interview Schedule": "Combined Medical Services Examination, 2026",
       "Notice": "74 Posts of Assistant Provident Fund Commissioner, EPFO",
       "Examination Time Table": "Indian Forest Service (Main) Examination, 2026",
+      "Exam Notification": "Engineering Services (Preliminary) Examination, 2027",
       "Marks of Recommended Candidates": "Combined Section Officers' (Grade 'B') LDCE-2025 and Combined Stenographers' (Grade 'B'-Grade-'I') LDCE-2019, 2020 & 2021",
       "Written Result (with name)": "Combined Section Officers' (Grade 'B') LDCE-2025 and Combined Stenographers' (Grade 'B'-Grade-'I') LDCE-2019, 2020 & 2021",
-      "User warning": "The following module is missing from the file system: video . For information about how to fix this, see the documentation page . in _drupal_trigger_error_with_delayed_logging() (line 1156 of /var/www/html/upsc/includes/bootstrap.inc ).",
+      "Written Result": "Combined Section Officers' (Grade 'B') LDCE-2025 and Combined Stenographers' (Grade 'B'-Grade-'I') LDCE-2019, 2020 & 2021",
       "To apply for examinations visit new Application Portal - https": "//upsconline.nic.in",
-      "Visitor No": "862875402",
-      "(Since": "15 Sep 2016)(133)"
+      "Visitor No": "862667972",
+      "(Since": "15 Sep 2016)(131)"
     },
     "job_fields": {}
   },
@@ -2130,11 +2145,6 @@
         "document": false
       },
       {
-        "title": "",
-        "url": "https://www.upsc.gov.in/rss.php",
-        "document": false
-      },
-      {
         "title": "हिन्दी",
         "url": "https://www.upsc.gov.in/hi/recruitment/recruitment-advertisement",
         "document": false
@@ -2408,13 +2418,18 @@
         "title": "Disclaimer",
         "url": "https://www.upsc.gov.in/disclaimer-",
         "document": false
+      },
+      {
+        "title": "Akiko Sherman Infotech",
+        "url": "http://www.akikosherman.com",
+        "document": false
       }
     ],
     "tables": [],
     "key_values": {
       "HELPDESK": "011-24041001 / 011-40303444",
       "User warning": "The following module is missing from the file system: video . For information about how to fix this, see the documentation page . in _drupal_trigger_error_with_delayed_logging() (line 1156 of /var/www/html/upsc/includes/bootstrap.inc ).",
-      "Visitor No": "862800772",
+      "Visitor No": "862874539",
       "(Since": "15 Sep 2016)"
     },
     "job_fields": {}
