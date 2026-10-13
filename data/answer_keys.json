@@ -655,7 +655,7 @@
       "Written Result (with name)": "Combined Section Officers' (Grade 'B') LDCE-2025 and Combined Stenographers' (Grade 'B'-Grade-'I') LDCE-2019, 2020 & 2021",
       "User warning": "The following module is missing from the file system: video . For information about how to fix this, see the documentation page . in _drupal_trigger_error_with_delayed_logging() (line 1156 of /var/www/html/upsc/includes/bootstrap.inc ).",
       "To apply for examinations visit new Application Portal - https": "//upsconline.nic.in",
-      "Visitor No": "862872461",
+      "Visitor No": "862875402",
       "(Since": "15 Sep 2016)(133)"
     },
     "job_fields": {}
@@ -903,16 +903,6 @@
         "document": false
       },
       {
-        "title": "the documentation page",
-        "url": "https://www.drupal.org/node/2487215",
-        "document": false
-      },
-      {
-        "title": "Indian Forest Service (Main) Examination, 2026",
-        "url": "https://www.upsc.gov.in/examinations/Indian%20Forest%20Service%20%28Main%29%20Examination%2C%202026",
-        "document": false
-      },
-      {
         "title": "Engineering Services (Preliminary) Examination, 2027",
         "url": "https://www.upsc.gov.in/examinations/Engineering%20Services%20%28Preliminary%29%20Examination%2C%202027",
         "document": false
@@ -925,6 +915,11 @@
       {
         "title": "Combined Geo-Scientist (Preliminary) Examination, 2027",
         "url": "https://www.upsc.gov.in/examinations/Combined%20Geo-Scientist%20%28Preliminary%29%20Examination%2C%202027",
+        "document": false
+      },
+      {
+        "title": "Combined Defence Services Examination (II), 2025 (OTA)",
+        "url": "https://www.upsc.gov.in/examinations/Combined%20Defence%20Services%20Examination%20%28II%29%2C%202025%20%28OTA%29",
         "document": false
       },
       {
@@ -1008,6 +1003,21 @@
         "document": false
       },
       {
+        "title": "Combined Defence Services Examination (II), 2025",
+        "url": "https://www.upsc.gov.in/examinations/Combined%20Defence%20Services%20Examination%20%28II%29%2C%202025",
+        "document": false
+      },
+      {
+        "title": "Central Armed Police Forces (ACs) Examination, 2025",
+        "url": "https://www.upsc.gov.in/examinations/Central%20Armed%20Police%20Forces%20%28ACs%29%20Examination%2C%202025",
+        "document": false
+      },
+      {
+        "title": "Central Armed Police Forces (ACs) Examination, 2024",
+        "url": "https://www.upsc.gov.in/examinations/Central%20Armed%20Police%20Forces%20%28ACs%29%20Examination%2C%202024",
+        "document": false
+      },
+      {
         "title": "Website Policies",
         "url": "https://www.upsc.gov.in/website-policy",
         "document": false
@@ -1051,8 +1061,7 @@
     "tables": [],
     "key_values": {
       "HELPDESK": "011-24041001 / 011-40303444",
-      "User warning": "The following module is missing from the file system: video . For information about how to fix this, see the documentation page . in _drupal_trigger_error_with_delayed_logging() (line 1156 of /var/www/html/upsc/includes/bootstrap.inc ).",
-      "Visitor No": "862702248",
+      "Visitor No": "862696473",
       "(Since": "15 Sep 2016)"
     },
     "job_fields": {}
@@ -2121,6 +2130,11 @@
         "document": false
       },
       {
+        "title": "",
+        "url": "https://www.upsc.gov.in/rss.php",
+        "document": false
+      },
+      {
         "title": "हिन्दी",
         "url": "https://www.upsc.gov.in/hi/recruitment/recruitment-advertisement",
         "document": false
@@ -2394,18 +2408,13 @@
         "title": "Disclaimer",
         "url": "https://www.upsc.gov.in/disclaimer-",
         "document": false
-      },
-      {
-        "title": "Akiko Sherman Infotech",
-        "url": "http://www.akikosherman.com",
-        "document": false
       }
     ],
     "tables": [],
     "key_values": {
       "HELPDESK": "011-24041001 / 011-40303444",
       "User warning": "The following module is missing from the file system: video . For information about how to fix this, see the documentation page . in _drupal_trigger_error_with_delayed_logging() (line 1156 of /var/www/html/upsc/includes/bootstrap.inc ).",
-      "Visitor No": "862702949",
+      "Visitor No": "862800772",
       "(Since": "15 Sep 2016)"
     },
     "job_fields": {}
