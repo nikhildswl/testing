@@ -270,6 +270,11 @@
         "document": true
       },
       {
+        "title": "Written Result: National Defence Academy and Naval Academy Examination (II), 2026",
+        "url": "https://www.upsc.gov.in/whats-new/National%20Defence%20Academy%20and%20Naval%20Academy%20Examination%20%28II%29%2C%202026/Written%20Result",
+        "document": false
+      },
+      {
         "title": "Final Result: 363 Posts of Principal in Education Department, GNCTD",
         "url": "https://www.upsc.gov.in/whats-new/363 Posts of Principal in Education Department, GNCTD/Final Result",
         "document": false
@@ -390,11 +395,6 @@
         "document": false
       },
       {
-        "title": "Advertisement No.11 - 2026",
-        "url": "https://www.upsc.gov.in/whats-new/11 - 2026",
-        "document": false
-      },
-      {
         "title": "Marks of Recommended Candidates: CISF AC(EXE) LDCE-2026",
         "url": "https://www.upsc.gov.in/whats-new/CISF%20AC%28EXE%29%20LDCE-2026/Marks%20of%20Recommended%20Candidates",
         "document": false
@@ -402,16 +402,6 @@
       {
         "title": "Final Result: 02 Posts of Assistant Director Grade-II (IEDS) (Leather & Footwear), Ministry of MSME",
         "url": "https://www.upsc.gov.in/whats-new/02 Posts of Assistant Director Grade-II (IEDS) (Leather & Footwear), Ministry of MSME/Final Result",
-        "document": false
-      },
-      {
-        "title": "Written Result (with name): Central Armed Police Forces (ACs) Examination, 2026",
-        "url": "https://www.upsc.gov.in/whats-new/Central%20Armed%20Police%20Forces%20%28ACs%29%20Examination%2C%202026/Written%20Result%20%28with%20name%29",
-        "document": false
-      },
-      {
-        "title": "Final Result: 03 Posts of Assistant Director Grade-II (IEDS) (Chemical), Ministry of MSME",
-        "url": "https://www.upsc.gov.in/whats-new/03 Posts of Assistant Director Grade-II (IEDS) (Chemical), Ministry of MSME/Final Result",
         "document": false
       },
       {
@@ -655,6 +645,7 @@
     ],
     "key_values": {
       "HELPDESK": "011-24041001 / 011-40303444",
+      "Written Result": "National Defence Academy and Naval Academy Examination (II), 2026",
       "Final Result": "363 Posts of Principal in Education Department, GNCTD",
       "Rectt. Test": "09 posts of Scientist-B (Instrumentation) in Ministry of Earth Sciences",
       "Interview Schedule": "Combined Medical Services Examination, 2026",
@@ -662,10 +653,9 @@
       "Examination Time Table": "Indian Forest Service (Main) Examination, 2026",
       "Marks of Recommended Candidates": "Combined Section Officers' (Grade 'B') LDCE-2025 and Combined Stenographers' (Grade 'B'-Grade-'I') LDCE-2019, 2020 & 2021",
       "Written Result (with name)": "Combined Section Officers' (Grade 'B') LDCE-2025 and Combined Stenographers' (Grade 'B'-Grade-'I') LDCE-2019, 2020 & 2021",
-      "Written Result": "Combined Section Officers' (Grade 'B') LDCE-2025 and Combined Stenographers' (Grade 'B'-Grade-'I') LDCE-2019, 2020 & 2021",
       "User warning": "The following module is missing from the file system: video . For information about how to fix this, see the documentation page . in _drupal_trigger_error_with_delayed_logging() (line 1156 of /var/www/html/upsc/includes/bootstrap.inc ).",
       "To apply for examinations visit new Application Portal - https": "//upsconline.nic.in",
-      "Visitor No": "862702117",
+      "Visitor No": "862875402",
       "(Since": "15 Sep 2016)(133)"
     },
     "job_fields": {}
@@ -2424,7 +2414,7 @@
     "key_values": {
       "HELPDESK": "011-24041001 / 011-40303444",
       "User warning": "The following module is missing from the file system: video . For information about how to fix this, see the documentation page . in _drupal_trigger_error_with_delayed_logging() (line 1156 of /var/www/html/upsc/includes/bootstrap.inc ).",
-      "Visitor No": "862697683",
+      "Visitor No": "862683031",
       "(Since": "15 Sep 2016)"
     },
     "job_fields": {}
