@@ -2,11 +2,11 @@
   "source": "UPSC",
   "source_name": "Union Public Service Commission",
   "source_url": "https://www.upsc.gov.in",
-  "scraped_at": "2026-10-26T12:31:11.542198+00:00",
+  "scraped_at": "2026-10-26T22:26:22.045207+00:00",
   "total_pages": 12,
   "successful_pages": 8,
   "failed_pages": 4,
-  "total_documents": 39,
+  "total_documents": 40,
   "category_counts": {
     "admit_cards": 1,
     "answer_keys": 7,
