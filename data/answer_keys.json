@@ -1136,6 +1136,10 @@
       {
         "title": "Revised - III Annual Calendar 2025",
         "url": "https://www.upsc.gov.in/sites/default/files/RevisedIIICalendar2025-Engl-160126.pdf"
+      },
+      {
+        "title": "Revised - II Annual Calendar 2025",
+        "url": "https://www.upsc.gov.in/sites/default/files/Revised-II-AnnualCalendar-2025-Engl-071124.pdf"
       }
     ],
     "links": [
@@ -1147,6 +1151,11 @@
       {
         "title": "",
         "url": "https://www.linkedin.com/company/official-union-public-service-commission",
+        "document": false
+      },
+      {
+        "title": "",
+        "url": "https://www.upsc.gov.in/rss.php",
         "document": false
       },
       {
@@ -1370,11 +1379,6 @@
         "document": false
       },
       {
-        "title": "UPSC Centenary Celebrations 1926-2026",
-        "url": "https://www.upsc.gov.in/upsc-centenary-celebrations-1926-2026",
-        "document": false
-      },
-      {
         "title": "Helpline - SC/ST/OBC/EWS/PwBD (1800-118-711)",
         "url": "https://www.upsc.gov.in/helpline",
         "document": false
@@ -1392,6 +1396,11 @@
       {
         "title": "Revised - III Annual Calendar 2025",
         "url": "https://www.upsc.gov.in/sites/default/files/RevisedIIICalendar2025-Engl-160126.pdf",
+        "document": true
+      },
+      {
+        "title": "Revised - II Annual Calendar 2025",
+        "url": "https://www.upsc.gov.in/sites/default/files/Revised-II-AnnualCalendar-2025-Engl-071124.pdf",
         "document": true
       },
       {
@@ -1433,11 +1442,6 @@
         "title": "Disclaimer",
         "url": "https://www.upsc.gov.in/disclaimer-",
         "document": false
-      },
-      {
-        "title": "Akiko Sherman Infotech",
-        "url": "http://www.akikosherman.com",
-        "document": false
       }
     ],
     "tables": [
@@ -1457,12 +1461,16 @@
         [
           "Revised - III Annual Calendar 2025",
           "16/01/2026"
+        ],
+        [
+          "Revised - II Annual Calendar 2025",
+          "07/11/2024"
         ]
       ]
     ],
     "key_values": {
       "HELPDESK": "011-24041001 / 011-40303444",
-      "Visitor No": "862667303",
+      "Visitor No": "862664706",
       "(Since": "15 Sep 2016)"
     },
     "job_fields": {}
