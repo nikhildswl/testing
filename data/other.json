@@ -1,6 +1,6 @@
 [
   {
-    "url": "https://www.upsc.gov.in/e-admit-cards",
+    "url": "https://www.upsc.gov.in/examinations/active-exams",
     "status": "failed",
     "title": "",
     "category": "other",
@@ -11,7 +11,7 @@
     "job_fields": {}
   },
   {
-    "url": "https://www.upsc.gov.in/examinations/active-exams",
+    "url": "https://www.upsc.gov.in/examinations/exam-calendar",
     "status": "failed",
     "title": "",
     "category": "other",
@@ -44,6 +44,17 @@
     "job_fields": {}
   },
   {
+    "url": "https://www.upsc.gov.in/exams-related-info/final-result",
+    "status": "failed",
+    "title": "",
+    "category": "other",
+    "documents": [],
+    "links": [],
+    "tables": [],
+    "key_values": {},
+    "job_fields": {}
+  },
+  {
     "url": "https://www.upsc.gov.in/exams-related-info/marks-info",
     "status": "failed",
     "title": "",
@@ -55,7 +66,7 @@
     "job_fields": {}
   },
   {
-    "url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices",
+    "url": "https://www.upsc.gov.in/exams-related-info/written-result",
     "status": "failed",
     "title": "",
     "category": "other",
@@ -66,7 +77,18 @@
     "job_fields": {}
   },
   {
-    "url": "https://www.upsc.gov.in/site-map",
+    "url": "https://www.upsc.gov.in/recruitment/recruitment-advertisement",
+    "status": "failed",
+    "title": "",
+    "category": "other",
+    "documents": [],
+    "links": [],
+    "tables": [],
+    "key_values": {},
+    "job_fields": {}
+  },
+  {
+    "url": "https://www.upsc.gov.in/recruitment/recruitment-test/notices",
     "status": "failed",
     "title": "",
     "category": "other",
