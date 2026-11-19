@@ -2,14 +2,14 @@
   "source": "UPSC",
   "source_name": "Union Public Service Commission",
   "source_url": "https://www.upsc.gov.in",
-  "scraped_at": "2026-11-18T15:20:54.229538+00:00",
+  "scraped_at": "2026-11-19T00:01:48.154943+00:00",
   "total_pages": 12,
-  "successful_pages": 9,
-  "failed_pages": 3,
-  "total_documents": 93,
+  "successful_pages": 5,
+  "failed_pages": 7,
+  "total_documents": 13,
   "category_counts": {
-    "answer_keys": 9,
-    "other": 3
+    "answer_keys": 5,
+    "other": 7
   },
   "files": {
     "jobs": "jobs.json",
