@@ -1125,6 +1125,11 @@
         "document": false
       },
       {
+        "title": "CISF AC(EXE) LDCE-2027",
+        "url": "https://www.upsc.gov.in/active-examinations/cisf-acexe-ldce-2027",
+        "document": false
+      },
+      {
         "title": "Indian Forest Service (Main) Examination, 2026",
         "url": "https://www.upsc.gov.in/active-examinations/indian-forest-service-main-examination-2026",
         "document": false
@@ -1163,11 +1168,6 @@
         "title": "Combined Geo-Scientist (Main) Examination, 2026",
         "url": "https://www.upsc.gov.in/active-examinations/combined-geo-scientist-main-examination-2026",
         "document": false
-      },
-      {
-        "title": "Engineering Services (Main) Examination, 2026",
-        "url": "https://www.upsc.gov.in/active-examinations/engineering-services-main-examination-2026",
-        "document": false
       }
     ],
     "tables": [
@@ -1177,6 +1177,12 @@
           "Examination Notice No.",
           "Date of Commencement of Examination",
           "Last date for submission of Application"
+        ],
+        [
+          "CISF AC(EXE) LDCE-2027",
+          "—",
+          "14 Mar 2027",
+          "15 Dec 2026, 06:00 PM"
         ],
         [
           "Indian Forest Service (Main) Examination, 2026",
@@ -1225,19 +1231,13 @@
           "05/2026 GEO",
           "20 Jul 2026",
           "NA"
-        ],
-        [
-          "Engineering Services (Main) Examination, 2026",
-          "—",
-          "21 Jun 2026",
-          "NA"
         ]
       ]
     ],
     "key_values": {},
     "job_fields": {
-      "last_date": "6 Oct 2026",
-      "exam_date": "of Examination 22 Nov 2026 View Exam Details Combined Section Officers (Grade-‘"
+      "last_date": "15 Dec 2026",
+      "exam_date": "of Examination 14 Mar 2027 Last date for submission of Application 15 Dec 2026,"
     }
   },
   {
@@ -3933,7 +3933,7 @@
       "calendar_month Revised – III Annual Calendar 2025 Date of Upload": "16 Jan 2026 visibility View ( 49.00 KB )"
     },
     "job_fields": {
-      "exam_date": "OF EXAMINATION 14 March 2027 Combined Defence Services Examination (I), 2027 NO"
+      "exam_date": "OF EXAMINATION 27 February 2027 Combined Defence Services Examination (I), 2027"
     }
   },
   {
@@ -6433,6 +6433,11 @@
         "document": false
       },
       {
+        "title": "Examination Notification: CISF AC(EXE) LDCE-2027",
+        "url": "https://www.upsc.gov.in/latest-updates/examinations/22907",
+        "document": false
+      },
+      {
         "title": "e-Admit Card: Indian Forest Service (Main) Examination, 2026 open_in_new",
         "url": "https://upsconline.nic.in/candidate/realms/candidate-portal/protocol/openid-connect/auth?client_id=account&redirect_uri=https%3A%2F%2Fupsconline.nic.in%2Fcandidate%2Frealms%2Fcandidate-portal%2Faccount%2Flogin-redirect&state=0%2Fc627cf2e-13c5-7385-5b72-213518189d93&response_type=code&scope=openid",
         "document": false
@@ -6526,6 +6531,7 @@
     "tables": [],
     "key_values": {
       "Dr. Ajay Kumar, Hon'ble Chairman, UPSC, launching 'My UPSC Interview": "From Dream to Reality', a special and unique initiative by the Commission during 99th Foundation Day Celebrations.",
+      "Examination Notification": "CISF AC(EXE) LDCE-2027",
       "Notices": "186 Posts of Drugs Inspector, M/o Health & Family Welfare",
       "Final Results": "25 Posts Company Prosecutor, Ministry of Corporate Affairs",
       "Marks of Recommended Candidates": "National Defence Academy and Naval Academy Examination (I), 2026",
@@ -6540,7 +6546,7 @@
       "Addendum": "03 Posts of Law Officer, Government of NCT of Delhi"
     },
     "job_fields": {
-      "exam_date": "OF EXAMINATION 14 March 2027 Combined Defence Services Examination (I), 2027 NO"
+      "exam_date": "OF EXAMINATION 27 February 2027 Combined Defence Services Examination (I), 2027"
     }
   },
   {
@@ -17053,14 +17059,6 @@
           "13/10/2026",
           "365.13 KB",
           "View visibility"
-        ],
-        [
-          "53 - 2025",
-          "25085317510",
-          "04 Posts of Training Officer (Except women training) (Mechanic Diesel)",
-          "15/09/2026",
-          "1.1 MB",
-          "View visibility"
         ]
       ]
     ],
@@ -18140,6 +18138,22 @@
           "Document(s)"
         ],
         [
+          "53 - 2025",
+          "25085317510",
+          "04 Posts of Training Officer (Except women training) (Mechanic Diesel)",
+          "25/11/2026",
+          "297.78 KB",
+          "View visibility"
+        ],
+        [
+          "06 - 2025",
+          "25050602624",
+          "121 Posts of Operations Officer in DGCA",
+          "25/11/2026",
+          "189.68 KB",
+          "View visibility"
+        ],
+        [
           "07 - 2025",
           "25060728214",
           "05 Posts of Junior Mining Geologist, M/o Mines",
@@ -18201,22 +18215,6 @@
           "10 Posts of Deputy Director (Planning/Statistics), GNCTD",
           "02/11/2026",
           "5.4 MB",
-          "View visibility"
-        ],
-        [
-          "07 - 2025",
-          "25060719114",
-          "02 Posts of Deputy Director (Medical), M/o Labour and Employment",
-          "02/11/2026",
-          "79.41 KB",
-          "View visibility"
-        ],
-        [
-          "53 - 2025",
-          "25085320510",
-          "04 Posts of Training Officer (Except women training) (Sewing Technology), M/o Skill Development & Entrepreneurship",
-          "02/11/2026",
-          "95.87 KB",
           "View visibility"
         ]
       ]
