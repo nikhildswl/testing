@@ -6531,6 +6531,7 @@
     "tables": [],
     "key_values": {
       "Dr. Ajay Kumar, Hon'ble Chairman, UPSC, launching 'My UPSC Interview": "From Dream to Reality', a special and unique initiative by the Commission during 99th Foundation Day Celebrations.",
+      "Examination Time Table": "Combined Section Officers (Grade-'B') LDCE - 2026 and Combined Stenographers (Grade - 'B' - Grade - 'I') LDCE - 2022, 2023 and 2024",
       "Examination Notification": "CISF AC(EXE) LDCE-2027",
       "Notices": "186 Posts of Drugs Inspector, M/o Health & Family Welfare",
       "Final Results": "25 Posts Company Prosecutor, Ministry of Corporate Affairs",
@@ -6538,7 +6539,6 @@
       "Interview Schedule": "Civil Services (Main) Examination, 2026",
       "e-Admit Card": "Indian Forest Service (Main) Examination, 2026 open_in_new",
       "Schedule for Recruitment Tests & Interviews": "19 Posts of Assistant Public Prosecutor in CBI",
-      "Examination Time Table": "Engineering Services (Preliminary) Examination, 2027",
       "Final Result": "Combined Section Officers' (Grade 'B') LDCE-2025 and Combined Stenographers' (Grade 'B'-Grade-'I') LDCE-2019, 2020 & 2021",
       "Written Result (with name)": "Civil Services (Main) Examination, 2026",
       "Written Result": "Civil Services (Main) Examination, 2026",
@@ -12081,7 +12081,7 @@
         "document": false
       },
       {
-        "title": "chevron_right Interview Schedules",
+        "title": "",
         "url": "https://www.upsc.gov.in/status-of-lateral-recruitment-cases-advertisement-wise/interview-schedules",
         "document": false
       },
